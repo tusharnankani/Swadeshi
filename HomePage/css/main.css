@@ -95,6 +95,7 @@ body {
 
 /* Main title */
 .head {
+    all: unset;
     color: #39424e;
     font-weight: bolder;
     display: flex;
@@ -103,5 +104,11 @@ body {
     top: 25rem;
     max-width: 12.923em;
     font-size: 2.5rem;
-    text-decoration: none;
+    position: relative;
+    cursor:pointer; 
+}
+
+.head a {
+    text-decoration:none !important; 
+    color: #39424e;
 }
