@@ -1,23 +1,18 @@
 /* Google font: Monteserrat*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 
 body {
     background: #f4faff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", Sans-Serif;
     height: 100vh;
     line-height: 1.6em;
+    margin: 0;
+	padding: 0;
 }
 
 .container {
     height: 100%;
     width: 100%;
-
 }
 
 /* Navbar list of items */
@@ -75,7 +70,7 @@ body {
 
 .navbar ul li a:hover:after { 
     width: 100%; 
-    left: 0; ;
+    left: 0;
 }
 
 /* Font icon + - */
