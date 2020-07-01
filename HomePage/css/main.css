@@ -155,6 +155,8 @@ body {
     padding: 9px 20px;
     font-size: 20px;
     margin: 25px;
+    background-color: #f4faff;
+    letter-spacing: 0.05rem;
 }
 
 .description button:active{
@@ -163,9 +165,12 @@ body {
 }
   
 .description button:hover{
-    color: #39424e;
+    color: #f4faff;
     cursor: pointer;
-    transition: all ease 0.5s;
+    transition: all ease 0.3s;
+    background-color: #62676e;
+    font-weight: lighter;
+    box-shadow: 2px 2px 5px #62676e;
 }  
   
 
