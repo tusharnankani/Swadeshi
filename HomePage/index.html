@@ -17,6 +17,33 @@
 </head>
 
 <body>
+	<div style = "display: none;">
+		<svg id = "logo" xmlns = "http://www.w3.org/2000/svg" viewBox = "0 0 16 16">
+			<defs>
+				<linearGradient id = "FaviconGradient" x1 = "1" y1 = "0" x2 = "0" y2 = "1">
+					<stop offset = "0%" stop-color = "#c31432" />
+					<stop offset = "100%" stop-color = "#240b36" />
+				</linearGradient>
+			</defs>
+		
+			<circle cx = "8" cy = "8" r = "8" fill = "url(#FaviconGradient)"></circle>
+			<text
+				x = "50%" y = "50%"
+				dominant-baseline = "middle"
+				text-anchor = "middle"
+				
+				font-size = "8"
+				font-family = "Sans-Serif"
+				fill = "white">?</text>
+		</svg>
+		
+		<script>
+			document.querySelector("[rel = icon]").href = 
+				"data:image/svg+xml," +
+				encodeURIComponent(document.querySelector("svg#logo").outerHTML);
+		</script>
+	</div>
+
 	<nav>
 		<!-- <img class="logo" src="logo.jpeg" alt="logo"> -->
 		<ul>
