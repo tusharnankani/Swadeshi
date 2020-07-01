@@ -101,7 +101,7 @@ body {
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    top: 25rem;
+    top: 15rem;
     max-width: 12.923em;
     font-size: 2.5rem;
     position: relative;
@@ -112,3 +112,61 @@ body {
     text-decoration:none !important; 
     color: #39424e;
 }
+
+.head-content {
+    color: #39424e;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: center;
+    top: 16rem;
+    max-width: 35rem;
+    font-size: 1.5rem;
+    position: relative;
+    left: 12rem;
+    padding-bottom: 1.8rem;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    top: 16rem;
+    left: 1.2rem;
+    position: relative;
+}
+
+
+.farmer, .wholesale{
+    max-width: 25rem;
+    padding: 1.5rem;
+}
+
+.farmer h1, .wholesale h1,
+.farmer .content, .wholesale .content {
+    color: #39424e;
+    padding-bottom: 1.4rem;
+}
+
+.description button {
+    max-width: 8rem;
+    border: #39424e solid;
+    color: #39424e;
+    border-width: 0.5px;
+    position: relative;
+    padding: 9px 20px;
+    font-size: 20px;
+    margin: 25px;
+}
+
+.description button:active{
+    border-width: 0.5px;
+    border: #39424e solid;
+}
+  
+.description button:hover{
+    color: #39424e;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}  
+  
+
+
