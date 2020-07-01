@@ -1,0 +1,107 @@
+/* Google font: Monteserrat*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4faff;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    line-height: 1.6em;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+
+}
+
+/* Navbar list of items */
+.navbar {
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 4em;
+    background: rgba(0, 0, 0, 0.87);
+}
+
+.navbar ul {
+    /* margin: 150px auto 0;  */
+    padding: 0; 
+    display: table;
+    text-align: center;
+    display: table;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 1rem;
+    padding: 15px 20px;
+    display: table-cell; 
+    position: relative; 
+  /* padding: 15px 0; */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f4f4f4;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 2px;
+    position: relative;
+}
+
+.navbar ul li a:after {    
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: greenyellow;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar ul li a:hover:after { 
+    width: 100%; 
+    left: 0; ;
+}
+
+/* Font icon + - */
+.textsize {
+    color: #f4f4f4;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 2px;
+    position: relative;
+}
+
+.text-s :hover{
+    cursor: pointer;
+    text-shadow: 0 0 4px greenyellow;
+}
+
+
+/* Main title */
+.head {
+    color: #39424e;
+    font-weight: bolder;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    top: 25rem;
+    max-width: 12.923em;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
