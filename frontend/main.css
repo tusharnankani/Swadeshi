@@ -17,7 +17,12 @@ body {
 	
 	color: #39424e;
 	background: #f4faff;
+	background-image: url(background.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 2.5rem;
 	font-family: "Montserrat", Sans-Serif;
+	
 }
 
 a {
@@ -157,7 +162,7 @@ main {
 	padding-bottom: 1.4rem;
 }
 
-.description button {
+/* .description button {
 	max-width: 8rem;
 	border: #39424e solid;
 	border-width: 0.5px;
@@ -180,9 +185,11 @@ main {
 	background-color: #62676e;
 	font-weight: lighter;
 	box-shadow: 0 0 5px rgb(119, 143, 82);
-}
+} */
 
-/* For Farmer's portal */
+
+
+/* For phone number */
 .enter-phone {
 	/* display: flex;
 	align-items: center;
@@ -192,22 +199,24 @@ main {
 }
 
 /* Main title */
-#farmer {
+/* #farmer {
 	font-size: 3.2rem;
 	font-weight: bolder;
 }
 #farmer-description {
 	letter-spacing: 0.1rem;
 	font-size: 1.5rem;
-}
+} */
 
+
+/* Form */
 .floating-label{ 
 	font-size: 1em;
 	position: relative;
 	margin: 1em;
 }
 
-input{
+.enter-phone input{
 	color: inherit;
 	font-size: 1.25em;
 	
@@ -219,25 +228,25 @@ input{
 	border: none;
 	border-bottom: 2px solid #757575;
 }
-input::placeholder{
+.enter-phone input::placeholder{
 	color: transparent;
 }
-input:focus{
+.enter-phone input:focus{
 	outline: none;
 	border-bottom: 2px solid rgb(1, 146, 90); 
 }
-input:focus ~ label,
-input:not(:placeholder-shown) ~ label{
+.enter-phone input:focus ~ label,
+.enter-phone input:not(:placeholder-shown) ~ label{
 	top: -0.6rem;
 	font-size: 0.9rem;
 	color: rgb(1, 146, 90);
 }
-input:focus ~ .bar:before,
-input:focus ~ .bar:after{
+.enter-phone input:focus ~ .bar:before,
+.enter-phone input:focus ~ .bar:after{
 	width: 50%;
 }
 
-label{
+.enter-phone label{
 	color: #999; 
 	position: absolute;
 	pointer-events: none;
@@ -247,19 +256,31 @@ label{
 }
 
 .sub-btn button {
-	padding: 0.5rem 1.5rem;
-	margin: 1rem;
+
+	max-width: 8rem;
 	border: #39424e solid;
-	background-color: #f4faff solid; 
-	color: black;
 	border-width: 0.5px;
+	position: relative;
+	padding: 9px 20px;
+	font-size: 20px;
+	margin: 25px;
+	background-color: #f4faff;
+	letter-spacing: 0.05rem;
 }
 
 .sub-btn button:hover {
-	color: white;
-	background-color: #39424e;
-	transition: ease 0.2s;
+	color: #f4faff;
 	cursor: pointer;
-	border-width: 0.5px;
+	transition: all ease 0.3s;
+	background-color: #62676e;
 	font-weight: lighter;
+	box-shadow: 0 0 5px rgb(119, 143, 82);
 }
+
+.enter-phone{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
