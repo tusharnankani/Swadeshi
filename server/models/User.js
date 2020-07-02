@@ -20,7 +20,29 @@ const UserSchema = new mongoose.Schema(
 		isFarmer: {
 			type: boolean,
 			required: true
-		}
+		},
+		products: [{
+			category: {
+				type: String,
+				required: true
+			},
+			item: {
+				type: String,
+				required: true
+			},
+			orig_qty: {
+				type: double,
+				required: true
+			},
+			avail_qty: {
+				type: double,
+				required: true
+			},
+			price: {
+				type: double,
+				required: true
+			}
+		}]
 	}
 );
 
