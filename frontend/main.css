@@ -162,51 +162,12 @@ main {
 	padding-bottom: 1.4rem;
 }
 
-/* .description button {
-	max-width: 8rem;
-	border: #39424e solid;
-	border-width: 0.5px;
-	position: relative;
-	padding: 9px 20px;
-	font-size: 20px;
-	margin: 25px;
-	background-color: #f4faff;
-	letter-spacing: 0.05rem;
-}
-
-.description button:active {
-	border-width: 0.5px;
-}
-  
-.description button:hover {
-	color: #f4faff;
-	cursor: pointer;
-	transition: all ease 0.3s;
-	background-color: #62676e;
-	font-weight: lighter;
-	box-shadow: 0 0 5px rgb(119, 143, 82);
-} */
-
-
-
 /* For phone number */
 .enter-phone {
-	/* display: flex;
-	align-items: center;
-	justify-content: center; */
+
 	top: 0rem;
 
 }
-
-/* Main title */
-/* #farmer {
-	font-size: 3.2rem;
-	font-weight: bolder;
-}
-#farmer-description {
-	letter-spacing: 0.1rem;
-	font-size: 1.5rem;
-} */
 
 
 /* Form */
@@ -233,13 +194,13 @@ main {
 }
 .enter-phone input:focus{
 	outline: none;
-	border-bottom: 2px solid rgb(1, 146, 90); 
+	border-bottom: 2px solid rgb(56, 48, 4); 
 }
 .enter-phone input:focus ~ label,
 .enter-phone input:not(:placeholder-shown) ~ label{
 	top: -0.6rem;
 	font-size: 0.9rem;
-	color: rgb(1, 146, 90);
+	color: rgb(56, 48, 4);
 }
 .enter-phone input:focus ~ .bar:before,
 .enter-phone input:focus ~ .bar:after{
@@ -269,12 +230,13 @@ main {
 }
 
 .sub-btn button:hover {
-	color: #f4faff;
+	color: #f4f4f4;
 	cursor: pointer;
 	transition: all ease 0.3s;
-	background-color: #39424e;
+	background-color: #363523;
+	opacity: 0.5;
 	font-weight: lighter;
-	box-shadow: 0 0 5px rgb(119, 143, 82);
+	box-shadow: 0 0 5px rgb(216, 213, 16);
 }
 
 .enter-phone{
