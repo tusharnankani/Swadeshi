@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 
 // DB connection
-const db = require("./config/keys").MongoURI;
+const db = require("./config/keys").mongoURI;
 mongoose.connect(
 	db, {
 		useNewUrlParser: true,
@@ -21,8 +21,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, "../HomePage")));
 
 // Routes
-//app.use("/wholesaler", require("./routes/wholesaler.js"));
-//app.use("/farmer", require("./routes/farmer.js"));
+app.use("/farmer", require("./routes/farmer.js"));
+app.use("/wholesaler", require("./routes/wholesaler.js"));
 
 // Port
 const PORT = process.env.PORT || 5000;

@@ -14,10 +14,12 @@ const UserSchema = new mongoose.Schema(
 			type: String
 		},
 		isWholesaler: {
-			type: boolean
+			type: boolean,
+			required: true
 		},
 		isFarmer: {
-			type: boolean
+			type: boolean,
+			required: true
 		}
 	}
 );
