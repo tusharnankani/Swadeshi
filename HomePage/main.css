@@ -94,17 +94,30 @@ nav .logo {
 }
 
 /* Font icon + - */
-.textsize {
+.text-s button {
 	color: #f4f4f4;
+	font: 1rem;
+	background-color: transparent;
 	letter-spacing: 0.15em;
 	display: inline-block;
-	padding: 15px 2px;
 	position: relative;
+	padding: 1px;
+	margin: 2px;
+	border: none;
+	border-style: none;
 }
 
-.text-s :hover {
+.text-s button :hover {
 	cursor: pointer;
-	text-shadow: 0 0 4px greenyellow;
+	outline: none;
+	background-color: #f4f4f4;
+	color: black;
+}
+.text-s :active {
+	cursor: pointer;
+	border: none;
+	border-style: none;
+	opacity: 0.6;
 }
 
 main {
