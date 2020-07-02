@@ -181,3 +181,85 @@ main {
 	font-weight: lighter;
 	box-shadow: 0 0 5px rgb(119, 143, 82);
 }
+
+/* For Farmer's portal */
+.enter-phone {
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
+	top: 0rem;
+
+}
+
+/* Main title */
+#farmer {
+	font-size: 3.2rem;
+	font-weight: bolder;
+}
+#farmer-description {
+	letter-spacing: 0.1rem;
+	font-size: 1.5rem;
+}
+
+.floating-label{ 
+	font-size: 1em;
+	position: relative;
+	margin: 1em;
+}
+
+input{
+	color: inherit;
+	font-size: 1.25em;
+	
+	padding: 1rem;
+	display: block;
+	width: 100%;
+	
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #757575;
+}
+input::placeholder{
+	color: transparent;
+}
+input:focus{
+	outline: none;
+	border-bottom: 2px solid rgb(1, 146, 90); 
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+	top: -0.6rem;
+	font-size: 0.9rem;
+	color: rgb(1, 146, 90);
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after{
+	width: 50%;
+}
+
+label{
+	color: #999; 
+	position: absolute;
+	pointer-events: none;
+	left: 0.5em;
+	top: 1em;
+	transition: 0.2s ease all; 
+}
+
+.sub-btn button {
+	padding: 0.5rem 1.5rem;
+	margin: 1rem;
+	border: #39424e solid;
+	background-color: #f4faff solid; 
+	color: black;
+	border-width: 0.5px;
+}
+
+.sub-btn button:hover {
+	color: white;
+	background-color: #39424e;
+	transition: ease 0.2s;
+	cursor: pointer;
+	border-width: 0.5px;
+	font-weight: lighter;
+}

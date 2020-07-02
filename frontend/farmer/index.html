@@ -7,15 +7,15 @@
 
 	<link rel = "icon" href = "logo.svg" sizes = "any" />
 	
-	<link rel="stylesheet" href="main.css" />
+	<link rel="stylesheet" href="../main.css" />
     <title>Farmer's Portal</title>
 </head>
 <body>
     <nav>
-		<img class="logo" src="logo.svg" alt="logo" />
+		<img class="logo" src="../logo.svg" alt="logo" />
 		
 		<ul>
-			<li><a href="#home">Home</a> </li>
+			<li><a href="../index.html">Home</a> </li>
 			<li><a href="#contact">Contact Us</a></li>
 			<div class="text-s">
 				<button  onclick="fontInc()">
@@ -34,13 +34,14 @@
 			<div id = "farmer-description">One stop shop for farmers.</div>
 		</div>
 		<div class="enter-phone">
-			<div class="farmer-register">
+			<div class="form">
 				<h2>Please enter your Phone Number</h2>
 				
 				<div class = "floating-label">
-					<input type = "text" id = "Number" placeholder = "placeholder">
+					<input type = "tel" id = "Number" placeholder = "placeholder" pattern="[0-9]{10}" required>
 					<label for = "Number">Contact Number</label>
 				</div>
+				<h5><sup>*</sup>An OTP will be sent to your Phone Number</h5>
 				<div class="sub-btn">
 					<button type="submit">SUBMIT</button>
 				</div>
