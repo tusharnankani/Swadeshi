@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 
 // DB connection
-const db = require('./config/keys').MongoURI;
+const db = require("./config/keys").MongoURI;
 mongoose.connect(
 	db, {
 		useNewUrlParser: true,
