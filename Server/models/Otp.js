@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const OtpSchema = new mongoose.Schema
 (
     {
-        _id: {                  // 4 digit OTP
-            type: ObjectID,
+        _id: {                  // Phone number
+            type: ObjectId,
             required: true
         },
-        ph_no: {
+        otp: {
             type: int,
             required: true
         }
