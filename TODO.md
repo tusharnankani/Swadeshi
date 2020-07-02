@@ -107,16 +107,3 @@ On UserSchema Products: [
 	else: {
 		status: "User already exists" | "Incomplete data"
 	}
-
-1. Client-side flow:
-	- Unified landing page loads.
-	- Does GET /user
-		- if successful, go to respective dashboard, skip everything.
-	- (*) Waits for user to enter phone, validates phone and press next.
-	- Does POST /otp {phone_number}
-		- if post is unsuccessful, then we have bigger problems.
-	- Waits for user to enter OTP, validates otp and press next.
-	- Does POST /authenticate {phone_number, otp}
-		- if post is successful, do GET /user, if successful then go to respective dashboard and skip everything.
-		- else goto signup and skip everything.
-	- Inform user that OTP is wrong, goto (*)
