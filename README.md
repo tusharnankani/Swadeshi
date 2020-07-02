@@ -11,7 +11,7 @@ The solution should enable farmers to create independent accounts and interact w
 - MongoDB for the database.
 
 ## Logo
-![Logo of a bushel of wheat, in a green circle.](frontend/logo.svg)
+<img src = "frontend/logo.svg" alt = "Logo of a bushel of wheat, in a green circle" width = "128" height = "128" />
 
 ## Landing page flow
 - Unified landing page loads.
