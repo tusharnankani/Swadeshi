@@ -112,7 +112,7 @@ main {
 
 /* Main title */
 #company-name {
-	font-size: 3rem;
+	font-size: 3.2rem;
 	font-weight: bolder;
 }
 #tagline {
@@ -152,7 +152,6 @@ main {
 
 .description button:active{
     border-width: 0.5px;
-    border: #39424e solid;
 }
   
 .description button:hover{
@@ -161,5 +160,5 @@ main {
     transition: all ease 0.3s;
     background-color: #62676e;
     font-weight: lighter;
-    box-shadow: 2px 2px 5px #62676e;
+    box-shadow: 0 0 5px rgb(119, 143, 82);
 }
