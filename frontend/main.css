@@ -218,7 +218,6 @@ main {
 }
 
 .sub-btn button {
-
 	max-width: 8rem;
 	border: #39424e solid;
 	border-width: 0.5px;
@@ -228,6 +227,7 @@ main {
 	margin: 25px;
 	background-color: #f4faff;
 	letter-spacing: 0.05rem;
+	opacity: 0.75;
 }
 
 .sub-btn button:hover {
