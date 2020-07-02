@@ -82,7 +82,7 @@ nav ul li a:after {
 	height: 2px;
 	left: 50%;
 	position: absolute;
-	background: greenyellow;
+	background: rgb(226, 223, 52);
 	transition: width 0.3s ease 0s, left 0.3s ease 0s;
 	width: 0;
 }
@@ -101,7 +101,7 @@ nav .logo {
 /* Font icon + - */
 .text-s button {
 	color: #f4f4f4;
-	font: 1rem;
+	font-size: 1.1rem;
 	background-color: transparent;
 	letter-spacing: 0.15em;
 	display: inline-block;
@@ -117,6 +117,7 @@ nav .logo {
 	outline: none;
 	background-color: #f4f4f4;
 	color: black;
+	transition: ease 0.4s;
 }
 .text-s :active {
 	cursor: pointer;
