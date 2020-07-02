@@ -23,6 +23,10 @@ mongoose.connect
 // Middleware
 app.use(express.urlencoded({extended: false}));
 
+//Routes
+app.use('/wholesaler', require('./routes/wholesaler.js'));
+app.use('/farmer', require('./routes/farmer.js'));
+
 // Port
 const PORT = process.env.PORT || 5000;
 app.listen
