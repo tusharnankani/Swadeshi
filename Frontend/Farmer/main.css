@@ -170,13 +170,13 @@ input::placeholder{
 }
 input:focus{
 	outline: none;
-	border-bottom: 2px solid rgb(87, 109, 46); 
+	border-bottom: 2px solid rgb(1, 146, 90); 
 }
 input:focus ~ label,
 input:not(:placeholder-shown) ~ label{
 	top: -0.6rem;
 	font-size: 0.9rem;
-	color: rgb(87, 109, 46);
+	color: rgb(1, 146, 90);
 }
 input:focus ~ .bar:before,
 input:focus ~ .bar:after{
