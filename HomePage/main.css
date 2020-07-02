@@ -10,11 +10,11 @@ body {
 	grid-template-rows: 4em auto;
 	justify-content: center;
 	
-    margin: 0;
+	margin: 0;
 	padding: 0;
-    
-    min-height: 100vh;
-    
+	
+	min-height: 100vh;
+	
 	color: #39424e;
 	background: #f4faff;
 	font-family: "Montserrat", Sans-Serif;
@@ -33,58 +33,58 @@ a:hover {
 nav {
 	position: fixed;
 	
-    width: 100%;
+	width: 100%;
 	
-    align-items: center;
-    display: flex;
-    height: 4em;
-    background: rgba(0, 0, 0, 0.87);
+	align-items: center;
+	display: flex;
+	height: 4em;
+	background: rgba(0, 0, 0, 0.87);
 }
 
 nav ul {
-    /* margin: 150px auto 0;  */
-    padding: 0; 
-    display: table;
-    text-align: center;
-    display: table;
-    list-style: none;
-    width: 100%;
-    justify-content: center;
+	/* margin: 150px auto 0;  */
+	padding: 0; 
+	display: table;
+	text-align: center;
+	display: table;
+	list-style: none;
+	width: 100%;
+	justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1rem;
-    padding: 15px 20px;
-    display: table-cell; 
-    position: relative; 
+	margin: 0 1rem;
+	padding: 15px 20px;
+	display: table-cell; 
+	position: relative; 
   /* padding: 15px 0; */
 }
 
 nav ul li a {
-    color: #f4f4f4;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    display: inline-block;
-    padding: 15px 2px;
-    position: relative;
+	color: #f4f4f4;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	padding: 15px 2px;
+	position: relative;
 	text-decoration: none;
 }
 
-nav ul li a:after {    
-    background: none repeat scroll 0 0 transparent;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: greenyellow;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
+nav ul li a:after {	
+	background: none repeat scroll 0 0 transparent;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: greenyellow;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
 }
 
 nav ul li a:hover:after { 
-    width: 100%; 
-    left: 0;
+	width: 100%; 
+	left: 0;
 }
 
 nav .logo {
@@ -95,16 +95,16 @@ nav .logo {
 
 /* Font icon + - */
 .textsize {
-    color: #f4f4f4;
-    letter-spacing: 0.15em;
-    display: inline-block;
-    padding: 15px 2px;
-    position: relative;
+	color: #f4f4f4;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	padding: 15px 2px;
+	position: relative;
 }
 
-.text-s :hover{
-    cursor: pointer;
-    text-shadow: 0 0 4px greenyellow;
+.text-s :hover {
+	cursor: pointer;
+	text-shadow: 0 0 4px greenyellow;
 }
 
 main {
@@ -127,44 +127,44 @@ main {
 }
 
 .description {
-    display: grid;
+	display: grid;
 	grid-template-columns: repeat(2, auto);
-    justify-content: center;
+	justify-content: center;
 }
 
-.farmer, .wholesale{
-    max-width: 25rem;
-    padding: 1.5rem;
+.farmer, .wholesale {
+	max-width: 25rem;
+	padding: 1.5rem;
 }
 
 .farmer h1, .wholesale h1,
 .farmer .content, .wholesale .content {
 	margin: 0;
 	padding: 0;
-    padding-bottom: 1.4rem;
+	padding-bottom: 1.4rem;
 }
 
 .description button {
-    max-width: 8rem;
-    border: #39424e solid;
-    border-width: 0.5px;
-    position: relative;
-    padding: 9px 20px;
-    font-size: 20px;
-    margin: 25px;
-    background-color: #f4faff;
-    letter-spacing: 0.05rem;
+	max-width: 8rem;
+	border: #39424e solid;
+	border-width: 0.5px;
+	position: relative;
+	padding: 9px 20px;
+	font-size: 20px;
+	margin: 25px;
+	background-color: #f4faff;
+	letter-spacing: 0.05rem;
 }
 
-.description button:active{
-    border-width: 0.5px;
+.description button:active {
+	border-width: 0.5px;
 }
   
-.description button:hover{
-    color: #f4faff;
-    cursor: pointer;
-    transition: all ease 0.3s;
-    background-color: #62676e;
-    font-weight: lighter;
-    box-shadow: 0 0 5px rgb(119, 143, 82);
+.description button:hover {
+	color: #f4faff;
+	cursor: pointer;
+	transition: all ease 0.3s;
+	background-color: #62676e;
+	font-weight: lighter;
+	box-shadow: 0 0 5px rgb(119, 143, 82);
 }
