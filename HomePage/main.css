@@ -87,6 +87,12 @@ nav ul li a:hover:after {
     left: 0;
 }
 
+nav .logo {
+	max-height: 100%;
+	padding: 0.3rem;
+	box-sizing: border-box;
+}
+
 /* Font icon + - */
 .textsize {
     color: #f4f4f4;
