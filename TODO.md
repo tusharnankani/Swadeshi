@@ -90,7 +90,7 @@ On UserSchema Products: [
 		status: "OK"
 		user: {Authenticated user}
 	}
-	else: {	
+	else: {
 		status: "Access denied"
 	}
 	
