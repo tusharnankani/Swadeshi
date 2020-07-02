@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel = "icon" href = "logo.svg" sizes = "any" />
+	
+	<link rel="stylesheet" href="main.css" />
+    <title>Farmer's Portal</title>
+</head>
+<body>
+    <nav>
+		<img class="logo" src="logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="#home">Home</a> </li>
+			<li><a href="#contact">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+		<div>
+			<a href="#" id = "farmer">Farmer's Portal</a>
+			<div id = "farmer-description">One stop shop for farmers.</div>
+		</div>
+		<div class="enter-phone">
+			<div class="farmer-register">
+				<h2>Please enter your Phone Number</h2>
+				
+				<div class = "floating-label">
+					<input type = "text" id = "Number" placeholder = "placeholder">
+					<label for = "Number">Contact Number</label>
+				</div>
+				<div class="sub-btn">
+					<button type="submit">SUBMIT</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+</body>
+</html>

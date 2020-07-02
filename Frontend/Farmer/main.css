@@ -1,0 +1,211 @@
+/* Google font: Monteserrat*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+body {
+	display: grid;
+	grid-template-areas:
+		"nav"
+		"main"
+	;
+	grid-template-rows: 4em auto;
+	justify-content: center;
+	
+	margin: 0;
+	padding: 0;
+	
+	min-height: 100vh;
+	
+	color: #39424e;
+	background: #f4faff;
+	font-family: "Montserrat", Sans-Serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: transparent underline;
+	transition: text-decoration-color 200ms ease;
+}
+a:hover {
+	text-decoration-color: unset;
+}
+
+/* nav list of items */
+nav {
+	position: fixed;
+	
+	width: 100%;
+	
+	align-items: center;
+	display: flex;
+	height: 4em;
+	background: rgba(0, 0, 0, 0.87);
+}
+
+nav ul {
+	/* margin: 150px auto 0;  */
+	padding: 0; 
+	display: table;
+	text-align: center;
+	display: table;
+	list-style: none;
+	width: 100%;
+	justify-content: center;
+}
+
+nav ul li {
+	margin: 0 1rem;
+	padding: 15px 20px;
+	display: table-cell; 
+	position: relative; 
+  /* padding: 15px 0; */
+}
+
+nav ul li a {
+	color: #f4f4f4;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	padding: 15px 2px;
+	position: relative;
+	text-decoration: none;
+}
+
+nav ul li a:after {	
+	background: none repeat scroll 0 0 transparent;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: greenyellow;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+
+nav ul li a:hover:after { 
+	width: 100%; 
+	left: 0;
+}
+
+nav .logo {
+	max-height: 100%;
+	padding: 0.3rem;
+	box-sizing: border-box;
+}
+
+/* Font icon + - */
+.text-s button {
+	color: #f4f4f4;
+	font: 1rem;
+	background-color: transparent;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	position: relative;
+	padding: 1px;
+	margin: 2px;
+	border: none;
+	border-style: none;
+}
+
+.text-s button :hover {
+	cursor: pointer;
+	outline: none;
+	background-color: #f4f4f4;
+	color: black;
+}
+.text-s :active {
+	cursor: pointer;
+	border: none;
+	border-style: none;
+	opacity: 0.6;
+}
+
+
+main {
+	display: grid;
+	grid-area: main;
+	max-width: 70vw;
+	margin-top: 3rem;
+	row-gap: 1rem;
+}
+
+.enter-phone {
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
+	top: 0rem;
+
+}
+
+/* Main title */
+#farmer {
+	font-size: 3.2rem;
+	font-weight: bolder;
+}
+#farmer-description {
+	letter-spacing: 0.1rem;
+	font-size: 1.5rem;
+}
+
+.floating-label{ 
+	font-size: 1em;
+	position: relative;
+	margin: 1em;
+}
+
+input{
+	color: inherit;
+	font-size: 1.25em;
+	
+	padding: 1rem;
+	display: block;
+	width: 100%;
+	
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #757575;
+}
+input::placeholder{
+	color: transparent;
+}
+input:focus{
+	outline: none;
+	border-bottom: 2px solid rgb(87, 109, 46); 
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+	top: -0.6rem;
+	font-size: 0.9rem;
+	color: rgb(87, 109, 46);
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after{
+	width: 50%;
+}
+
+label{
+	color: #999; 
+	position: absolute;
+	pointer-events: none;
+	left: 0.5em;
+	top: 1em;
+	transition: 0.2s ease all; 
+}
+
+.sub-btn button {
+	padding: 0.5rem 1.5rem;
+	margin: 1rem;
+	border: #39424e solid;
+	background-color: #f4faff solid; 
+	color: black;
+	border-width: 0.5px;
+}
+
+.sub-btn button:hover {
+	color: white;
+	background-color: #39424e;
+	transition: ease 0.2s;
+	cursor: pointer;
+	border-width: 0.5px;
+	font-weight: lighter;
+}
