@@ -18,7 +18,7 @@ mongoose.connect(
 app.use(express.urlencoded({extended: false}));
 
 // Static files
-app.use(express.static(path.join(__dirname, "../HomePage")));
+app.use(express.static(path.join(__dirname, "../Frontend")));
 
 // Routes
 app.use("/farmer", require("./routes/farmer.js"));
