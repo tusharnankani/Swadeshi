@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
 // DB connection
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys.js").mongoURI;
 mongoose.connect(
 	db, {
 		useNewUrlParser: true,
@@ -16,11 +17,13 @@ mongoose.connect(
 
 // Middleware
 app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
 
 // Static files
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 // Routes
+app.use("/auth", require("./routes/auth.js"));
 app.use("/farmer", require("./routes/farmer.js"));
 app.use("/wholesaler", require("./routes/wholesaler.js"));
 
