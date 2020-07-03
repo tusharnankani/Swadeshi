@@ -19,7 +19,7 @@ body {
 	background: #f4faff;
 	background-image: url(background.svg);
 	background-repeat: no-repeat;
-	/* background-attachment: fixed; */
+	background-attachment: fixed;
 	/* background-position: center; */
 	background-size: cover;
 	padding-bottom: 2.5rem;
