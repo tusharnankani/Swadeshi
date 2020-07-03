@@ -16,6 +16,6 @@ const AuthTokenSchema = new mongoose.Schema({
 });
 
 
-const AuthToken = mongoose.model("Otp", AuthTokenSchema);
+const AuthToken = mongoose.model("AuthToken", AuthTokenSchema);
 
 module.exports = AuthToken;
