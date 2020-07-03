@@ -67,14 +67,28 @@
 				<h2>Please enter your Phone Number</h2>
 			
 				<div class = "floating-label" id = "NumberWrapper">
-					<input type = "tel" id = "Number" placeholder = "placeholder" pattern="[0-9]{10}" size="10" required="">
+					<input
+						id = "Number"
+						type = "tel"
+						placeholder = "placeholder"
+						pattern="[0-9]{10}"
+						maxlength="10"
+						required=""
+					/>
 					<label for = "Number">Contact Number</label>
 				</div>
 				
 				<h5><sup>*</sup> A 4-digit OTP will be sent to your Phone Number</h5>
 
 				<div class = "floating-label hide" id = "OtpWrapper">
-					<input type = "password" id = "Otp" placeholder = "placeholder" pattern="[0-9]{4}" size="4" required="">
+					<input
+						id = "Otp"
+						type = "password"
+						placeholder = "placeholder"
+						pattern="[0-9]{4}"
+						maxlength="4"
+						required=""
+					/>
 					<label for = "Otp">OTP</label>
 				</div>
 
