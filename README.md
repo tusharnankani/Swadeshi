@@ -1,4 +1,4 @@
-# TSECHackathon
+# *TSEC Codestorm - Hackathon'20*
 
 ## Problem Statement
 - Implement a Web Based solution through which farmers can participate in a commodity exchange market. The solution should explain the process involved and the benefits of commodity exchange to the user.
