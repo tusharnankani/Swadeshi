@@ -7,7 +7,7 @@ let
 ;
 
 window.addEventListener("load", e => {
-	phoneNumber = get("#Number");
+	phoneNumber = get("#number");
 	otp = get("#Otp");
 	
 	submit = get("#Submit");
@@ -120,10 +120,23 @@ async function sendApiRequest(url, options){
 	return fetch(url, options);
 }
 
+
+
+// A+ A- Buttons
+
 function fontInc(){
-	
+	var el = document.getElementById('body');
+	var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+	var fontSize = parseFloat(style); 
+	el.style.fontSize = (fontSize + 1) + 'px';
+	// adding smooth transitioning;
+	el.style.transition = 'ease 0.3s';
 }
 
 function fontDec(){
-	
+	var el = document.getElementById('body');
+	var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+	var fontSize = parseFloat(style); 
+	el.style.fontSize = (fontSize - 1) + 'px';
+	el.style.transition = 'ease 0.3s';
 }

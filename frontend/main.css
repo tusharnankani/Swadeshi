@@ -130,8 +130,7 @@ main {
 	display: grid;
 	grid-area: main;
 	max-width: 70vw;
-	margin-top: 5rem;
-	
+	margin-top: 3rem;
 	row-gap: 2rem;
 }
 
@@ -153,7 +152,7 @@ main {
 
 .farmer, .wholesale {
 	max-width: 25rem;
-	padding: 1.5rem;
+	padding: 2rem;
 }
 
 .farmer h1, .wholesale h1,
@@ -164,10 +163,8 @@ main {
 }
 
 /* For phone number */
-.enter-phone {
-
+.enter-phone{
 	top: 0rem;
-
 }
 
 
@@ -247,3 +244,10 @@ main {
 	position: relative;
 }
 
+.hide{
+	display: none;
+}
+
+#OtpWrapper input { 
+	-webkit-text-security: square; 
+}
