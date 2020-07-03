@@ -4,11 +4,11 @@ const AuthTokenSchema = new mongoose.Schema
 (
     {
         _id: {                  // Auth token
-            type: ObjectId,
+            type: Object(),
             required: true
         },
         ph_no: {
-            type: ObjectId,
+            type: Object(),
             required: true
 		},
 		exp_date: {
@@ -21,4 +21,4 @@ const AuthTokenSchema = new mongoose.Schema
 
 const AuthToken = mongoose.model('Otp', AuthTokenSchema);
 
-modeule.exports = AuthToken;
+module.exports = AuthToken;

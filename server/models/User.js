@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema(
 	{
 		_id: {				// Phone number
-			type: ObjectId,
+			type: Object(),
 			required: true
 		},
 		name: {
@@ -14,11 +14,11 @@ const UserSchema = new mongoose.Schema(
 			type: String
 		},
 		isWholesaler: {
-			type: boolean,
+			type: Boolean,
 			required: true
 		},
 		isFarmer: {
-			type: boolean,
+			type: Boolean,
 			required: true
 		},
 		products: [{
@@ -31,15 +31,15 @@ const UserSchema = new mongoose.Schema(
 				required: true
 			},
 			orig_qty: {
-				type: double,
+				type: Number,
 				required: true
 			},
 			avail_qty: {
-				type: double,
+				type: Number,
 				required: true
 			},
 			price: {
-				type: double,
+				type: Number,
 				required: true
 			}
 		}]
