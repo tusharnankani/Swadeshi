@@ -56,7 +56,7 @@ function checkInputs(){
 }
 
 function isInputValid(input){
-	return (input.value.match(new RegExp(input.pattern)) == null);
+	return new RegExp(input.pattern).test(input.value);
 }
 
 function displayError(inputWrapper, message){

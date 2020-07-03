@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 
 // DB connection
-const db = require("./config/keys.js").mongoURI;
+const db = "mongodb://0.0.0.0:32769";
 mongoose.connect(
 	db, {
 		useNewUrlParser: true,
