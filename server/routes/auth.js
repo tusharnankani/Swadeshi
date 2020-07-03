@@ -48,9 +48,9 @@ router.post(
 		const phone = req.body.phone_number.toString();
 
 		if(!VALIDATE.PHONE.test(phone))
-			res.status(400).json(RESPONSE.INVALID_PHONE);
+			res.status(400).send(RESPONSE.INVALID_PHONE);
 		else
-			res.status(200).json(RESPONSE.OK);
+			res.status(200).send(RESPONSE.OK);
 	}
 );
 
@@ -61,13 +61,13 @@ router.post(
 		const otp = req.body.otp.toString();
 
 		if(!VALIDATE.PHONE.test(phone))
-			res.status(400).json(RESPONSE.INVALID_PHONE);
+			res.status(400).send(RESPONSE.INVALID_PHONE);
 		
 		else if(!VALIDATE.OTP.test(otp))
-			res.status(400).json(RESPONSE.INVALID_OTP);
+			res.status(400).send(RESPONSE.INVALID_OTP);
 		
 		else if(!await isValidOtp(phone, otp))
-			res.status(401).json(RESPONSE.WRONG_OTP);
+			res.status(401).send(RESPONSE.WRONG_OTP);
 		
 		else{
 			const cookie_options = {
@@ -75,7 +75,7 @@ router.post(
 				httpOnly: true
 			}
 			res.cookie("x-swadeshi-auth", "auth-cookie", cookie_options);
-			res.status(200).json(RESPONSE.OK);
+			res.status(200).send(RESPONSE.OK);
 		}
 	}
 );
