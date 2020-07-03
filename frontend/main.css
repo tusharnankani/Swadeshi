@@ -134,11 +134,11 @@ main {
 }
 
 /* Main title */
-#company-name, #farmer {
+#company-name, #farmer, #wholesaler {
 	font-size: 3.2rem;
 	font-weight: bolder;
 }
-#tagline, #farmer-description {
+#tagline, #farmer-description, #wholesaler-description{
 	letter-spacing: 0.1rem;
 	font-size: 1.5rem;
 }
