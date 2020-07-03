@@ -16,16 +16,16 @@ The solution should enable farmers to create independent accounts and interact w
 
 ## Landing page flow
 - Unified landing page loads.
-- Do GET /user
-	- if successful, go to respective dashboard.
+- Do **GET** `/user`
+	- If successful, go to respective dashboard.
 - Wait for user to enter valid phone, and press next.
-- Do POST /otp {phone_number}
-	- if post is unsuccessful, then we have bigger problems.
+- Do **POST** `/otp` body: `{phoneNumber}`
+	- If post is unsuccessful, then we have bigger problems.
 - (*) Wait for user to enter valid OTP, and press next.
-- Do POST /authenticate {phone_number, otp}
-	- if post is successful, do GET /user
-		- if successful then user exists, go to respective dashboard.
-		- else user does not exist, goto signup.
+- Do **POST** `/authenticate` body: `{phoneNumber, otp}`
+	- If post is successful, do **GET** `/user`
+		- If user is found then go to respective dashboard.
+		- Else user does not exist, goto signup.
 - Inform user that OTP is wrong, goto (*)
 
 ## Api Documentation
