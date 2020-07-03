@@ -1,7 +1,7 @@
 # TSECHackathon
 
 ## Problem Statement
-Implement a Web Based solution through which farmers can participate in a commodity exchange market. The solution should explain the process involved and the benefits of commodity exchange to the user.
+- Implement a Web Based solution through which farmers can participate in a commodity exchange market. The solution should explain the process involved and the benefits of commodity exchange to the user.
 The purpose of such an exchange is to provide a centralized marketplace where commodity producers can sell their commodities to those who want to use them for manufacturing or consumption.
 The solution should enable farmers to create independent accounts and interact with dealers to avail the best profits and deals.
 
@@ -11,6 +11,7 @@ The solution should enable farmers to create independent accounts and interact w
 - MongoDB for the database.
 
 ## Logo
+* The *wheat* represents *farmer's pride*, and green around the wheat represents the *indian fields.*
 <img src = "frontend/logo.svg" alt = "Logo of a bushel of wheat, in a green circle" width = "128" height = "128" />
 
 ## Landing page flow
