@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // DB connection
-const db = "mongodb://localhost:27017";
+const db = require("./config/keys.js").mongoURI;
 mongoose.connect(
 	db, {
 		useNewUrlParser: true,
