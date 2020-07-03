@@ -1,19 +1,19 @@
-const get = document.getElementById.bind(document);
+const get = document.querySelector.bind(document);
 
 let
-	phoneNumber,
+	phone,
 	otp,
 	submit
 ;
 
 window.addEventListener("load", e => {
-	phoneNumber = get("#number");
+	phone = get("#Number");
 	otp = get("#Otp");
 	
 	submit = get("#Submit");
 	submit.addEventListener("click", handleSubmit);
 	
-	get("#NewOtp").addEventListener("click", e => {
+	get("#Resend").addEventListener("click", e => {
 		if(checkInputs())
 			getOtp(phone.value);
 	});
@@ -43,11 +43,11 @@ async function handleSubmit(e){
 
 function checkInputs(){
 	let isValid = true;
-	if(!isInputValid(phone.value)){
+	if(!isInputValid(phone)){
 		displayError("#NumberWrapper", "Please check the phone number");
 		isValid = false;
 	}
-	if(!isInputValid(otp.value)){
+	if(state == "otp" && !isInputValid(otp)){
 		displayError("#OtpWrapper", "OTP must be 4 digits");
 		isValid = false;
 	}
@@ -63,41 +63,41 @@ function displayError(inputWrapper, message){
 	if(typeof inputWrapper == "string")
 		inputWrapper = get(inputWrapper);
 	
-	console.err(message);
 	//TODO: Show error somehow.
+	console.error(message);
 }
 
 async function getOtp(phone){
-	return sendApiRequest("/otp", {
+	return sendApiRequest("/auth/otp", {
 		method: "POST",
 		body: {
-			"phone_number": phone
+			phoneNumber: phone
 		}
 	}).then(assertOK);
 }
 
 async function authenticateUser(phone, otp){
-	return sendApiRequest("/authenticate", {
+	return sendApiRequest("/auth", {
 		method: "POST",
 		body: {
-			"phone_number": phone,
-			"otp": otp
+			phoneNumber: phone,
+			otp
 		}
 	}).then(assertOK);
 }
 
 async function checkAuthentication(isAuthenticated = false){
-	let r = await sendApiRequest("/users");
+	let r = await sendApiRequest("/auth/user");
 	let data = await r.json();
 	
 	let path; 
-	if(r.status == 200 && data.status == "OK")
+	if(r.status == 200)
 		if(data.isFarmer)
 			path = "/dashboard/farmer";
 		else if(data.isWholesaler)
 			path = "/dashboard/wholesaler";
 	
-	else if(isAuthenticated && r.status == 403 && data.status == "Access denied")
+	else if(isAuthenticated && r.status == 403)
 		path = "/signup";
 	
 	if(path)
@@ -119,7 +119,6 @@ async function sendApiRequest(url, options){
 	
 	return fetch(url, options);
 }
-
 
 
 // A+ A- Buttons

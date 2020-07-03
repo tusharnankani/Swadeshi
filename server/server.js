@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 
 // DB connection
-const db = require("./config/keys").mongoURI;
+const db = "mongodb://localhost:27017";
 mongoose.connect(
 	db, {
 		useNewUrlParser: true,
@@ -16,7 +16,7 @@ mongoose.connect(
 	.catch(console.err);
 
 // Middleware
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
 // Static files

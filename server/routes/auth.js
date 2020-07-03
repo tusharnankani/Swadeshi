@@ -8,7 +8,7 @@ const AuthToken = require("../models/AuthToken.js");
 const Otp = require("../models/Otp.js");
 
 const VALIDATE = {
-	PHONE: /\+\d{0,3} \d{10}/,
+	PHONE: /\d{10}/,
 	OTP: /\d{4}/,
 	NAME: /[^\s\d]{3,}/
 };
@@ -37,28 +37,19 @@ const RESPONSE = {
 	}
 };
 
+const AUTH_TOKEN_LENGTH = 64;
+
+const AUTH_COOKIE_NAME = "x-auth-id-cookie";
 const AUTH_COOKIE_OPTIONS = {
 	maxAge: 60 * 60 * 24 * 2, //2 days
 	httpOnly: true
 };
 
 router.post(
-	"/otp",
-	(req, res) => {
-		const phone = req.body.phone_number.toString();
-
-		if(!VALIDATE.PHONE.test(phone))
-			res.status(400).send(RESPONSE.INVALID_PHONE);
-		else
-			res.status(200).send(RESPONSE.OK);
-	}
-);
-
-router.post(
-	"/authenticate",
+	"/",
 	async (req, res) => {
-		const phone = req.body.phone_number.toString();
-		const otp = req.body.otp.toString();
+		const phone = req.body.phoneNumber;
+		const otp = req.body.otp;
 
 		if(!VALIDATE.PHONE.test(phone))
 			res.status(400).send(RESPONSE.INVALID_PHONE);
@@ -70,17 +61,16 @@ router.post(
 			res.status(401).send(RESPONSE.WRONG_OTP);
 		
 		else{
-			const cookie_options = {
-				maxAge: 60 * 60 * 24 * 2,
-				httpOnly: true
-			}
-			res.cookie("x-swadeshi-auth", "auth-cookie", cookie_options);
+			res.cookie(AUTH_COOKIE_NAME, generateAuthToken(phone), AUTH_COOKIE_OPTIONS);
 			res.status(200).send(RESPONSE.OK);
 		}
 	}
 );
 
 async function isValidOtp(phone, otp){
+	if(!phone || !otp)
+		return false;
+	
 	return Otp.find({
 			_id: ObjectId(phone)
 		})
@@ -88,24 +78,51 @@ async function isValidOtp(phone, otp){
 		.catch(console.error);
 }
 
-router.get(
-	"/user",
-	async (req, res) => {
-		let user = authenticateUser(req.body.auth_token);
-		if(user == null)
-			res.status(403).send(RESPONSE.ACCESS_DENIED);
-		else
-			res.status(200).send(user);
-    }
+router.post(
+	"/otp",
+	(req, res) => {
+		let phone = req.body.phoneNumber || "8454975833";
+		
+		console.log("POST BODY:", req.body);
+		
+		if(!VALIDATE.PHONE.test(phone))
+			res.status(400).send(RESPONSE.INVALID_PHONE);
+		else{
+			generateOtp(phone);
+			res.status(200).send(RESPONSE.OK);
+		}
+	}
 );
 
-async function authenticateUser(tokenId){
+function generateOtp(phone){
+	let otp = Math.floor(Math.random() * 10_000).toString().padStart(4, 0);
+	
+	console.log("Generated OTP:", phone, otp);
+}
+
+function generateAuthToken(phone){
+	let token = "";
+	for(let i = 0; i < AUTH_TOKEN_LENGTH; i++)
+		token += Math.floor(Math.random() * 0xf).toString(16);
+	
+	console.log("Generated Auth token:", phone, token)
+	
+	return token;
+}
+
+async function authenticateUser(req, res){
 	let token = await AuthToken.find({
-		_id: ObjectId(tokenId)
+		_id: ObjectId(req.cookies[AUTH_COOKIE_NAME])
 	});
 	
-	if(!token.expires || new Date().getTime() > token.expires.getTime())
+	if(
+		!req.cookies[AUTH_COOKIE_NAME] ||
+		!token.expires ||
+		new Date().getTime() > token.expires.getTime()
+	){
+		res.status(403).send(RESPONSE.ACCESS_DENIED);
 		return null;
+	}
 	
 	return await User.find({
 		_id: ObjectId(token.userId)
@@ -113,13 +130,20 @@ async function authenticateUser(tokenId){
 }
 
 router.get(
+	"/user",
+	async (req, res) => {
+		let user = await authenticateUser(req, res);
+		if(user != null)
+			res.status(200).send(user);
+    }
+);
+
+router.get(
 	"/add",
 	async (req, res) => {
-		let user = authenticateUser(req.body.auth_token);
-		if(user == null){
-			res.status(403).send(RESPONSE.ACCESS_DENIED);
+		let user = authenticateUser(req, res);
+		if(user == null)
 			return;
-		}
 		
 		let token = await AuthToken.find({
 			_id: ObjectId(tokenId)

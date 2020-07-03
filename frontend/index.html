@@ -64,44 +64,27 @@
 		
 		<div class="enter-phone">
 			<div class="form">
-
 				<h2>Please enter your Phone Number</h2>
 			
-				<div class = "floating-label">
-					<input type = "tel" id = "number" placeholder = "placeholder" pattern="[0-9]{10}" size="10" required>
+				<div class = "floating-label" id = "NumberWrapper">
+					<input type = "tel" id = "Number" placeholder = "placeholder" pattern="[0-9]{10}" size="10" required="">
 					<label for = "Number">Contact Number</label>
 				</div>
-				<!-- JS for maxlength = 10 -->
-				<script>
-					number.oninput = function () {
-						if (this.value.length > 10) {
-							this.value = this.value.slice(0,10); 
-						}
-					}
-				</script>
-
+				
 				<h5><sup>*</sup> A 4-digit OTP will be sent to your Phone Number</h5>
 
 				<div class = "floating-label hide" id = "OtpWrapper">
-					<input type = "otp" id = "Otp" placeholder = "placeholder" pattern="[0-9]{4}" size=4 required>
+					<input type = "otp" id = "Otp" placeholder = "placeholder" pattern="[0-9]{4}" size="4" required="">
 					<label for = "Otp">OTP</label>
 				</div>
-				<!-- JS for maxlength = 4 -->
-				<script>
-					Otp.oninput = function () {
-						if (this.value.length > 4) {
-							this.value = this.value.slice(0,4); 
-						}
-					}
-				</script>
 
 				<div class="btn">
 					<div class="sub-btn">
-						<button type="submit" id="Submit" onclick="load()">SUBMIT</button>
+						<button type="submit" id="Submit">SUBMIT</button>
 					</div>
 
-					<div class="resend hide">
-						<button type="submit" id="Resend" onclick="">Re-Send OTP</button>
+					<div class="hide">
+						<button id="Resend">Re-Send OTP</button>
 					</div>
 				</div>
 				
