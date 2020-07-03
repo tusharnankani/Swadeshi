@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
 const AuthTokenSchema = new mongoose.Schema({
-	_id: {					// Auth token
-		type: Object(),
-		required: true
+	id: {					// Auth token
+		type: String,
+		required: true,
+		unique: true,
 	},
 	userId: {				// Phone number
-		type: Object(),
+		type: String,
 		required: true
 	},
 	expires: {

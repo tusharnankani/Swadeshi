@@ -36,8 +36,9 @@ async function handleSubmit(e){
 		state = "otp";
 	}
 	else if(state == "otp"){
-		if(await authenticateUser(phone.value, otp.value)){
-			checkAuthentication(true);
+		let authResponse = await authenticateUser(phone.value, otp.value);
+		if(authResponse.status == 200){
+			checkAuthentication();
 			state = "done";
 		}
 		else
@@ -87,22 +88,24 @@ async function authenticateUser(phone, otp){
 			phoneNumber: phone,
 			otp
 		}
-	}).then(assertOK);
+	});
 }
 
-async function checkAuthentication(isAuthenticated = false){
+async function checkAuthentication(){
 	let r = await sendApiRequest("/auth/user");
 	let data = await r.json();
 	
 	let path; 
-	if(r.status == 200)
+	if(r.status == 200){
 		if(data.isFarmer)
 			path = "/dashboard/farmer";
 		else if(data.isWholesaler)
 			path = "/dashboard/wholesaler";
-	
-	else if(isAuthenticated && r.status == 403)
+	}
+	else if(r.status == 404)
 		path = "/signup";
+	
+	console.log("AUTH", path, r.status, r.status == 404);
 	
 	if(path)
 		window.location.href += path;

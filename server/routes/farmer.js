@@ -14,7 +14,7 @@ router.get
 		User.find
 		(
 			{
-				_id: ObjectId(placeholder)
+				id: ObjectId(placeholder)
 			},
 		).then
 		(
