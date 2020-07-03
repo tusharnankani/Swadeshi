@@ -99,5 +99,10 @@ i {
     font-size: 1.25rem;
 }
 
+tr:hover{
+    background-color: rgb(243, 243, 214);
+    opacity: 0.85;
+    font-weight: 1.3rem;
+}
 
   
