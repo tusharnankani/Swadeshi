@@ -213,7 +213,8 @@ main {
 	transition: 0.2s ease all; 
 }
 
-.sub-btn button {
+.btn button {
+	display: flex;
 	max-width: 8rem;
 	border: #39424e solid;
 	border-width: 0.5px;
@@ -226,7 +227,7 @@ main {
 	opacity: 0.75;
 }
 
-.sub-btn button:hover {
+.btn button:hover {
 	color: #f4f4f4;
 	cursor: pointer;
 	transition: all ease 0.3s;
