@@ -6,9 +6,32 @@ const router = express.Router();
 // Include model
 const User = require("../models/User.js");
 
+router.get
+(
+	"/products",
+	(req, res) =>
+	{
+		User.find
+		(
+			{
+				_id: ObjectId(placeholder)
+			},
+		).then
+		(
+			(result) =>
+			{
+				res.status(200).send({ "products": result.products });
+			}
+		).catch
+		(
+			(err) => console.log(err)
+		);
+	}
+);
+
 router.post
 (
-	"/add",
+	"/product/add",
 	(req, res) =>
 	{
 		// Doubt: If we need to insert stuff like this, the User model needs to be modified.
@@ -36,6 +59,33 @@ router.post
 		).then
 		(
 			(result) => res.status(200).send("Product added")
+		).catch
+		(
+			(err) => console.log(err)
+		);
+	}
+);
+
+router.delete
+(
+	"/product/remove",
+	(req, res) =>
+	{
+		User.updateOne
+		(
+			{
+				_id: ObjectId(placeholder)
+			},
+			{
+				$pull: {
+					products: {
+						item: req.body.item
+					}
+				}
+			}
+		).then
+		(
+			res.send(200).send({ "message": "Item deleted" })
 		).catch
 		(
 			(err) => console.log(err)
