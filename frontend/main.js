@@ -3,6 +3,7 @@ const get = document.querySelector.bind(document);
 let
 	phone,
 	otp,
+	resendOtp,
 	submit
 ;
 
@@ -13,7 +14,8 @@ window.addEventListener("load", e => {
 	submit = get("#Submit");
 	submit.addEventListener("click", handleSubmit);
 	
-	get("#Resend").addEventListener("click", e => {
+	resendOtp = get("#Resend");
+	resendOtp.addEventListener("click", e => {
 		if(checkInputs())
 			getOtp(phone.value);
 	});
@@ -28,7 +30,9 @@ async function handleSubmit(e){
 	
 	if(state == "phone"){
 		await getOtp(phone.value)
+		resendOtp.classList.remove("hide");
 		get("#OtpWrapper").classList.remove("hide");
+		
 		state = "otp";
 	}
 	else if(state == "otp"){
@@ -111,11 +115,17 @@ function assertOK(e){
 	return e;
 }
 
-async function sendApiRequest(url, options){
+async function sendApiRequest(url, options = {}){
 	options = Object.assign({}, options);
 	
-	if(options && typeof options.body == "object")
+	if(typeof options.body == "object"){
+		if(!options.headers)
+			options.headers = {};
+		if(!options.headers["Content-Type"])
+			options.headers["Content-Type"] = "application/json";
+		
 		options.body = JSON.stringify(options.body);
+	}
 	
 	return fetch(url, options);
 }

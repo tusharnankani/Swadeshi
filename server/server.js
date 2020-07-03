@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -16,7 +17,8 @@ mongoose.connect(
 	.catch(console.err);
 
 // Middleware
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Static files

@@ -37,6 +37,8 @@ const RESPONSE = {
 	}
 };
 
+const OTP_TIMEOUT = 5 * 60; //5 minutes
+
 const AUTH_TOKEN_LENGTH = 64;
 
 const AUTH_COOKIE_NAME = "x-auth-id-cookie";
@@ -80,22 +82,33 @@ async function isValidOtp(phone, otp){
 
 router.post(
 	"/otp",
-	(req, res) => {
-		let phone = req.body.phoneNumber || "8454975833";
-		
-		console.log("POST BODY:", req.body);
+	async (req, res) => {
+		let phone = req.body.phoneNumber;
 		
 		if(!VALIDATE.PHONE.test(phone))
 			res.status(400).send(RESPONSE.INVALID_PHONE);
 		else{
-			generateOtp(phone);
+			await generateOtp(phone);
 			res.status(200).send(RESPONSE.OK);
 		}
 	}
 );
 
-function generateOtp(phone){
+async function generateOtp(phone){
 	let otp = Math.floor(Math.random() * 10_000).toString().padStart(4, 0);
+	
+	let expiry = new Date();
+	expiry.setSeconds(expiry.getSeconds() + OTP_TIMEOUT);
+	
+	//>>>> Insert OTP in database
+	
+	await Otp.insertOne({}, {
+		$set: {
+			_id: mongoose.Type.ObjectId(phone),
+			otp,
+			expiry
+		}
+	});
 	
 	console.log("Generated OTP:", phone, otp);
 }
