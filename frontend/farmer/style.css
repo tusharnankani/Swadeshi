@@ -2,7 +2,7 @@ ul, li {
     list-style: none;
 }
 
-i {
+/* i {
     font-size: 1.5rem;
 }
 .add-items .categories ul {
@@ -30,7 +30,7 @@ i {
 .dropdown-contents {
     display: flex;
     flex-direction: column;
-    /* border: olivedrab solid; */
+    /* border: olivedrab solid; 
     margin: 0;
     padding: 0;
     padding-top: 1.2rem;
@@ -47,8 +47,57 @@ i {
    
 }
 
-.dropdown span:hover :nth-child(n){
+.dropdown span:hover ul :nth-child(1){
     visibility: visible;
     position: relative; 
     opacity: 1;
+} */
+
+/* table styling */
+/* FEATURE TO BE ADDED: specific background colour for specific category */
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
+.content-table thead tr {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* .content-table tbody tr:nth-of-type(even) {
+background-color: #000000;
+} */
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ecf001;
+}
+
+.content-table tbody tr :hover {
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+
+i {
+    font-size: 1.25rem;
+}
+
+
+  
