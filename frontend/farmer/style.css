@@ -1,0 +1,54 @@
+ul, li {
+    list-style: none;
+}
+
+i {
+    font-size: 1.5rem;
+}
+.add-items .categories ul {
+    display: flex;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.dropdown{
+    font-size: 1.25rem;
+    padding: 0.5rem;
+}
+
+.dropdown span{
+    font-weight: bold;
+    padding: 0.5rem 0.2rem;
+    transition: ease 0.25s;
+}
+.dropdown span:hover{
+    background: rgb(250, 250, 236);
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.dropdown-contents {
+    display: flex;
+    flex-direction: column;
+    /* border: olivedrab solid; */
+    margin: 0;
+    padding: 0;
+    padding-top: 1.2rem;
+}
+
+.dropdown ul{
+    border-bottom: #39424e solid;
+    border-width: 0.06rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    visibility: hidden;
+    position: absolute; 
+    opacity: 0;
+   
+}
+
+.dropdown span:hover :nth-child(n){
+    visibility: visible;
+    position: relative; 
+    opacity: 1;
+}
