@@ -19,10 +19,11 @@ body {
 	background: #f4faff;
 	background-image: url(background.svg);
 	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	/* background-position: center; */
 	background-size: cover;
 	padding-bottom: 2.5rem;
 	font-family: "Montserrat", Sans-Serif;
-	
 }
 
 a {
@@ -37,9 +38,7 @@ a:hover {
 /* nav list of items */
 nav {
 	position: fixed;
-	
 	width: 100%;
-	
 	align-items: center;
 	display: flex;
 	height: 4em;
@@ -135,11 +134,11 @@ main {
 }
 
 /* Main title */
-#company-name {
+#company-name, #farmer {
 	font-size: 3.2rem;
 	font-weight: bolder;
 }
-#tagline {
+#tagline, #farmer-description {
 	letter-spacing: 0.1rem;
 	font-size: 1.5rem;
 }
