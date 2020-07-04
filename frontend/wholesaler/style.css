@@ -1,0 +1,104 @@
+*
+{
+    outline: none;
+}
+
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+
+#form{
+	display: grid;
+	width: 40vw;
+}
+
+.floating-label{ 
+	font-size: 1em;
+	position: relative;
+	margin: 1em;
+}
+
+input{
+	color: inherit;
+	font-size: 1.25em;
+	
+	padding: 1rem;
+	display: block;
+	width: 100%;
+	
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #757575;
+}
+input::placeholder{
+	color: transparent;
+}
+input:focus{
+	outline: none;
+	border-bottom: 2px solid rgb(56, 48, 4); 
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+	top: -0.6rem;
+	font-size: 0.9rem;
+	color: rgb(56, 48, 4);
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after{
+	width: 50%;
+}
+
+label{
+	color: #999; 
+	position: absolute;
+	pointer-events: none;
+	left: 0.5em;
+	top: 1em;
+	transition: 0.2s ease all; 
+}
+
+
+.option-wf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    transition: 0.5s ease;
+} 
+
+select, option {
+    padding: 0.5rem;
+    background: transparent;
+    
+}
+
+.option {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    z-index:999;
+    margin:0 0;
+    padding:0 0;
+    list-style:none;
+    border:1px solid #ccc;
+    background-color:white;
+    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.option li {
+    padding:0 6px;
+    margin:0 0;
+    padding:0 10px;
+}
+.option li:hover {
+    background-color:#39f;
+    color:white;
+}
+
+.form {
+    display: flex;
+}
