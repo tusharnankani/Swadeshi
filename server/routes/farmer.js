@@ -6,7 +6,7 @@ const router = express.Router();
 // Include model
 const User = require("../models/User.js");
 
-// To retrieve phone number if authenticated
+// To retrieve user doc if authenticated
 const util = require("../util.js");
 
 router.get(
