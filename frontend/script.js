@@ -38,7 +38,7 @@ async function handleSubmit(e){
 	else if(state == "otp"){
 		let authResponse = await authenticateUser(phone.value, otp.value);
 		if(authResponse.status == 200){
-			checkAuthentication();
+			await checkAuthentication();
 			state = "done";
 		}
 		else
