@@ -70,13 +70,15 @@ label{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25vw;
+    width: 35vw;
     transition: 0.5s ease;
 } 
 
 select, option {
     padding: 0.5rem;
     background: transparent;
+    width: 15vw;
+    font-size: 1em;
     
 }
 

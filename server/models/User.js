@@ -21,28 +21,9 @@ const UserSchema = new mongoose.Schema({
 		type: Boolean,
 		required: true
 	},
-	products: [{
-		category: {
-			type: String,
-			required: true
-		},
-		item: {
-			type: String,
-			required: true
-		},
-		orig_qty: {
-			type: Number,
-			required: true
-		},
-		avail_qty: {
-			type: Number,
-			required: true
-		},
-		price: {
-			type: Number,
-			required: true
-		}
-	}]
+	products: {
+		type: Array
+	}
 });
 
 
