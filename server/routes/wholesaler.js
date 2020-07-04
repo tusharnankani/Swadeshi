@@ -8,25 +8,16 @@ const util = require("../util.js");
 // Include model
 const Order = require('../models/Order.js');
 
-router.get
-(
+router.get(
 	"/orders",
-	async (req, res) =>
-	{
+	async (req, res) => {
 		const user = await util.authenticateUser(req);
 
-		Order.find
-		(
-			{
-				id: user.id
-			}
-		).then
-		(
-			(result) => res.status(200).send({ orders: result })
-		).catch
-		(
-			(err) => console.log(err)
-		);
+		let orders = await Order.find({
+			id: user.id
+		});
+		
+		res.status(200).send({ orders });
 	}
 );
 

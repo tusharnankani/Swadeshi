@@ -54,7 +54,61 @@ tr:hover{
     font-weight: 1.3rem;
 }
 
+main{
+	display: grid;
+	width: 100vw;
+	place-content: center;
+}
+
+.hide{
+	display: none;
+}
+
+section{
+	display: grid;
+	place-content: center;
+}
+
+#companyName{
+	display: grid;
+}
+
+#AddItem{
+	position: fixed;
+	top: 4rem;
+	left: 0;
+	
+	width: 100vw;
+	height: calc(100vh - 4rem);
+	
+	backdrop-filter: blur(25px);
+	
+	background: transparent;
+}
+
+#FloatingBox{
+	display: grid;
+	
+	width: 50vw;
+	padding: 1rem 3rem;
+	
+	border-radius: 3rem;
+	background: #f4faff;
+	
+	box-shadow: 0 0 10px #0003;
+}
+
+#FloatingBox .option-wf{
+	display: grid;
+	grid-auto-flow: column;
+	padding: 1rem 0;
+}
+
+#Price::before{
+	content: "₹";
+}
+
 button {
-    align-items: center;
-    left: 7rem;
+	max-width: 10rem;
+    margin: 0 2rem;
 }

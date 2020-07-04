@@ -73,30 +73,6 @@ label{
 	margin: 1em 0;
 }
 
-button{
-	padding: 1rem 1.5rem;
-	text-align: center;
-	
-	font-size: inherit;
-	font-weight: bold;
-	
-	height: min-content;
-	
-	outline: none;
-	background: transparent;
-	
-	border-radius: 0.5rem;
-	border: 3px solid var(--accent-color);
-	
-	cursor: pointer;
-	transition: 200ms ease;
-}
-
-button:hover,
-button:focus{
-	background-color: #00997030;
-}
-
 #Submit{
 	justify-self: center;
 	margin: 1rem 0;

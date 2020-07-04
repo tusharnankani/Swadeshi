@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<link rel = "icon" href = "../logo.svg" sizes = "any" />
+	<link rel="icon" href="../logo.svg" sizes="any" />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
 	<link rel="stylesheet" href="../style.css" />
 	<link rel="stylesheet" href="style.css" />
 	<title>Farmer's Portal</title>
-	<script defer="" src="../script.js"></script>
 
+	<script defer="" src="../util.js"></script>
+	<script defer="" src="script.js"></script>
 </head>
 <body>
     <nav>
@@ -34,373 +35,170 @@
 	</nav>
 
 	<main>
-
-		<div>
-			<a href="index.html" id = "farmer">Farmer's Portal</a>
-			<div id = "farmer-description">One stop shop for farmers.</div>
+		<div id="companyName">
+			<a href="index.html" id="farmer">Farmer's Portal</a>
+			<div id="farmer-description">One stop shop for farmers.</div>
 		</div>
 
-		<div class="list-content">
-
-			<!-- MANAGE ITEMS -->
+		<!-- MANAGE ITEMS -->
+		<section id="ManageItems">
 			<h2>Manage Items</h2>
-			<div class="add-items">
+			<table id="Items" class="content-table">
+				<thead>
+					<tr>
+						<th>Category</th>
+						<th>Item</th>
+						<th>Original Qty.</th>
+						<th>Available Qty.</th>
+						<th>Price/kg</th>
+						<th>REMOVE</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th id="createNewItem" colspan="6">
+							<a href="#">
+								<i class="fa fa-plus-circle" aria-hidden="true"></i>
+							</a>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- VIEW ORDERS -->
+		<section id="ViewOrders">
+			<h2>View Orders</h2>
+
+			<!-- Open Orders -->
+			<div class="open-orders">
+				<h3>Open Orders</h3>
+
+				<div class="table">
+					<table id="content-table">
+						<thead>
+							<tr>
+								<th>Order Date</th>
+								<th>Category</th>
+								<th>Item</th>
+								<th>Qty. Reqd.</th>
+								<th>Price/kg</th>
+								<th>Wholesaler's Number</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>29-08-2020</td>
+								<td>Pulses</td>
+								<td>Urad</td>
+								<td>150</td>
+								<td>50</td>
+								<td>+91 8967663864</td>
+							</tr>
+							<tr>
+								<td>25-07-2020</td>
+								<td>Pulses</td>
+								<td>Chana</td>
+								<td>120</td>
+								<td>80</td>
+								<td>+91 7507663817</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- Past Orders -->
+			<div id="past-orders">
+				<h3>Past Orders</h3>
 				<div class="table">
 					<table class="content-table">
-
 						<thead>
 						  <tr>
+							<th>Order Date</th>
 							<th>Category</th>
 							<th>Item</th>
-							<th>Original Qty.</th>
-							<th>Available Qty.</th>
+							<th>Qty. Reqd.</th>
 							<th>Price/kg</th>
-							<th>REMOVE</th>
+							<th>Wholesaler's Number</th>
 						  </tr>
 						</thead>
 
 						<tbody>
-						  <tr>
-							  <!-- clicking on add will redirect to new tab, add.html -->
-							<th>
-								<a href="add.html">
-									<i class="fa fa-plus-circle" aria-hidden="true"></i>
-								</a>
-							</th>
-						  </tr>
-							<!-- PULSES -->
-						  <tr>
-							<td>Pulses</td>
-							<td>Chana</td>
-							<td>110</td>
-							<td>88</td>
-							<td>1000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Pulses</td>
-							<td>Moong</td>
-							<td>110</td>
-							<td>88</td>
-							<td>1000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Pulses</td>
-							<td>Tur</td>
-							<td>110</td>
-							<td>88</td>
-							<td>1000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Pulses</td>
-							<td>Urad</td>
-							<td>110</td>
-							<td>88</td>
-							<td>1000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-
-						  <!-- GRAINS -->
-
-						  <tr>
-							  <td>Grains</td>
-							  <td>Rice</td>
-							  <td>100</td>
-							  <td>80</td>
-							  <td>2000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>Grains</td>
-							  <td>Maize</td>
-							  <td>100</td>
-							  <td>80</td>
-							  <td>2000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>Grains</td>
-							  <td>Wheat</td>
-							  <td>100</td>
-							  <td>80</td>
-							  <td>2000</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-
-						  <!-- Vegetables -->
-						  <tr>
-							<td>Vegetables</td>
-							<td>Tomatoes</td>
-							<td>80</td>
-							<td>50</td>
-							<td>300</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Vegetables</td>
-							<td>Potatoes</td>
-							<td>80</td>
-							<td>50</td>
-							<td>300</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Vegetables</td>
-							<td>Carrots</td>
-							<td>80</td>
-							<td>50</td>
-							<td>300</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Vegetables</td>
-							<td>Onion</td>
-							<td>80</td>
-							<td>50</td>
-							<td>300</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  
-						  <!-- Fruits -->
-						  <tr>
-							<td>Fruits</td>
-							<td>Mangoes</td>
-							<td>100</td>
-							<td>70</td>
-							<td>500</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Fruits</td>
-							<td>Apples</td>
-							<td>100</td>
-							<td>70</td>
-							<td>500</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Fruits</td>
-							<td>Bananas</td>
-							<td>100</td>
-							<td>70</td>
-							<td>500</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Fruits</td>
-							<td>Grapes</td>
-							<td>100</td>
-							<td>70</td>
-							<td>500</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-
-						  <!-- SPICES -->
-						  <tr>
-							<td>Spices</td>
-							<td>Red Chillies</td>
-							<td>80</td>
-							<td>50</td>
-							<td>800</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Spices</td>
-							<td>Black Pepper</td>
-							<td>80</td>
-							<td>50</td>
-							<td>800</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Spices</td>
-							<td>Turmeric</td>
-							<td>80</td>
-							<td>50</td>
-							<td>800</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Spices</td>
-							<td>Cardamom</td>
-							<td>80</td>
-							<td>50</td>
-							<td>800</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>Spices</td>
-							<td>Coriander</td>
-							<td>80</td>
-							<td>50</td>
-							<td>800</td>
-							<td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
-						  </tr>
-
 						</tbody>
-					  </table>
-
-				</div>
-			</div>	
-
-			<!-- VIEW ORDERS -->
-			<div class="view-orders">
-				<h2>View Orders</h2>
-
-				<!-- Open Orders -->
-				<div class="open-orders">
-					<h3>Open Orders</h3>
-
-					<div class="table">
-						<table class="content-table">
-	
-							<thead>
-							  <tr>
-								<th>Order Date</th>
-								<th>Category</th>
-								<th>Item</th>
-								<th>Qty. Reqd.</th>
-								<th>Price/kg</th>
-								<th>Wholesaler's Number</th>
-							  </tr>
-							</thead>
-
-							<tbody>
-							  <tr>
-								  <td>29-08-2020</td>
-								  <td>Pulses</td>
-								  <td>Urad</td>
-								  <td>150</td>
-								  <td>50</td>
-								  <td>+91 8967663864</td>
-							  </tr>
-							  <tr>
-								  <td>25-07-2020</td>
-								  <td>Pulses</td>
-								  <td>Chana</td>
-								  <td>120</td>
-								  <td>80</td>
-								  <td>+91 7507663817</td>
-							  </tr>
-							  <tr>
-								<td>15-07-2020</td>
-								<td>Grains</td>
-								<td>Wheat</td>
-								<td>120</td>
-								<td>60</td>
-								<td>+91 8985685811</td>
-							  </tr>
-							  <tr>
-								  <td>05-07-2020</td>
-								  <td>Vegetables</td>
-								  <td>Potatoes</td>
-								  <td>200</td>
-								  <td>40</td>
-								  <td>+91 9787693825</td>
-							  </tr>
-							  <tr>
-								  <td>16-08-2020</td>
-								  <td>Vegetables</td>
-								  <td>Onion</td>
-								  <td>110</td>
-								  <td>50</td>
-								  <td>+91 9587243827</td>
-							  </tr>
-							  <tr>
-								  <td>01-09-2020</td>
-								  <td>Spices</td>
-								  <td>Cardamom</td>
-								  <td>100</td>
-								  <td>250</td>
-								  <td>+91 9987663875</td>
-							  </tr>
-							  <tr>
-								  <td>25-07-2020</td>
-								  <td>Spices</td>
-								  <td>Black Pepper</td>
-								  <td>120</td>
-								  <td>80</td>
-								  <td>+91 9987663845</td>
-							  </tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-
-				<!-- Past Orders -->
-				<div class="past-orders">
-					<h3>Past Orders</h3>
-					<div class="table">
-						<table class="content-table">
-	
-							<thead>
-							  <tr>
-								<th>Order Date</th>
-								<th>Category</th>
-								<th>Item</th>
-								<th>Qty. Reqd.</th>
-								<th>Price/kg</th>
-								<th>Wholesaler's Number</th>
-							  </tr>
-							</thead>
-
-							<tbody>
-							  <tr>
-								  <td>29-12-2019</td>
-								  <td>Pulses</td>
-								  <td>Moong</td>
-								  <td>100</td>
-								  <td>70</td>
-								  <td>+91 8967663864</td>
-							  </tr>
-							  <tr>
-								  <td>25-02-2019</td>
-								  <td>Pulses</td>
-								  <td>Tur</td>
-								  <td>140</td>
-								  <td>80</td>
-								  <td>+91 7507663817</td>
-							  </tr>
-							  <tr>
-								<td>15-03-2020</td>
-								<td>Grains</td>
-								<td>Maize</td>
-								<td>120</td>
-								<td>60</td>
-								<td>+91 8985685811</td>
-							  </tr>
-							  <tr>
-								  <td>05-09-2019</td>
-								  <td>Vegetables</td>
-								  <td>Tomatoes</td>
-								  <td>150</td>
-								  <td>40</td>
-								  <td>+91 9787693825</td>
-							  </tr>
-							  <tr>
-								  <td>01-11-2019</td>
-								  <td>Spices</td>
-								  <td>Red Chillies</td>
-								  <td>100</td>
-								  <td>250</td>
-								  <td>+91 9987663875</td>
-							  </tr>
-							</tbody>
-						</table>
-					</div>
+					</table>
 				</div>
 			</div>
+		</section>
+		
+		<section id="AddItem" class="hide">			
+			<div id="FloatingBox">
+				<h2>Add Item</h2>
+				
+				<div id="ItemWrapper" class="option-wf">
+					<label for="Item">Select Item:</label>
+					<select name="option" id="Item">
+						<optgroup label="Pulses">
+							<option value="Chana">Chana</option>
+							<option value="Moong">Moong</option>
+							<option value="Tur">Tur</option>
+							<option value="Urad">Urad</option>
+						</optgroup>
 
+						<optgroup label="Grains">
+							<option value="Rice">Rice</option>
+							<option value="Maize">Maize</option>
+							<option value="Wheat">Wheat</option>
+						</optgroup>
 
+						<optgroup label="Vegetables">
+							<option value="Tomatoes">Tomatoes</option>
+							<option value="Potatoes">Potatoes</option>
+							<option value="Carrots">Carrots</option>
+							<option value="Onion">Onion</option>
+						</optgroup>
 
+						<optgroup label="Fruits">
+							<option value="Mangoes">Mangoes</option>
+							<option value="Apples">Apples</option>
+							<option value="Bananas">Bananas</option>
+							<option value="Grapes">Grapes</option>
+						</optgroup>
 
-		</div>
+						<optgroup label="Spices">
+							<option value="Red Chillies">Red Chillies</option>
+							<option value="Black Pepper">Black Pepper</option>
+							<option value="Turmeric">Turmeric</option>
+							<option value="Cardamom">Cardamom</option>
+							<option value="Coriander">Coriander</option>
+						</optgroup>
+					</select>
+				</div>
 
-
+				<div id="UnitWrapper" class="option-wf">
+					<label>Select Unit:</label>
+					<select name="option" id="Unit">
+						<option value="Quintal (Kg)" data-kg="100">Quintal (Kg)</option>
+						<option value="Ton" data-kg="1000">Ton</option>
+						<option value="Kg" data-kg="1">Kg</option>
+					</select>
+				</div>
+				
+				<div id="QuantityWrapper" class="floating-label">
+					<input type="text" id="Quantity" placeholder="placeholder">
+					<label for="Quantity">Available Quantity</label>
+				</div>
+				
+				<div id="PriceWrapper" class="floating-label">
+					<input type="text" id="Price" placeholder="placeholder">
+					<label for="Price">Price / kg</label>
+				</div>
+				
+				<button id="AddNewItem" type="submit">ADD</button>
+			</div>
+		</section>
 	</main>
-
 </body>
 </html>

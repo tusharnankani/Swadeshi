@@ -45,3 +45,36 @@ async function assertOK(e){
 function isInputValid(input){
 	return new RegExp(input.pattern).test(input.value);
 }
+
+function createElement(name, parent, options = {}){
+	let classList = name.split(".");
+	let tagName = classList.shift();
+
+	let id = tagName.split("#");
+	if(id.length > 1){
+		tagName = id[0];
+		id = id[1];
+	}
+	else
+		id = undefined;
+
+	let element = document.createElement(tagName);
+
+	if(id)
+		element.id = id;
+
+	if(classList.length > 0)
+		for(c of classList)
+			element.classList.add(c);
+
+	for(o in options)
+		if(o in element)
+			element[o] = options[o];
+		else
+			element.setAttribute(o, options[o]);
+
+	if(parent)
+		parent.appendChild(element);
+
+	return element;
+}

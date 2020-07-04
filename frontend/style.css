@@ -176,7 +176,7 @@ main {
 	margin: 1em;
 }
 
-.enter-phone input{
+input{
 	color: inherit;
 	font-size: 1.25em;
 	
@@ -188,25 +188,25 @@ main {
 	border: none;
 	border-bottom: 2px solid #757575;
 }
-.enter-phone input::placeholder{
+input::placeholder{
 	color: transparent;
 }
-.enter-phone input:focus{
+input:focus{
 	outline: none;
 	border-bottom: 2px solid rgb(56, 48, 4); 
 }
-.enter-phone input:focus ~ label,
-.enter-phone input:not(:placeholder-shown) ~ label{
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
 	top: -0.6rem;
 	font-size: 0.9rem;
 	color: rgb(56, 48, 4);
 }
-.enter-phone input:focus ~ .bar:before,
-.enter-phone input:focus ~ .bar:after{
+input:focus ~ .bar:before,
+input:focus ~ .bar:after{
 	width: 50%;
 }
 
-.enter-phone label{
+.floating-label label{
 	color: #999; 
 	position: absolute;
 	pointer-events: none;
@@ -215,28 +215,30 @@ main {
 	transition: 0.2s ease all; 
 }
 
-.btn button {
-	display: flex;
-	max-width: 8rem;
-	border: #39424e solid;
-	border-width: 0.5px;
-	position: relative;
-	padding: 9px 20px;
-	font-size: 20px;
-	margin: 25px;
-	background-color: #f4faff;
-	letter-spacing: 0.05rem;
-	opacity: 0.75;
+
+button{
+	padding: 1rem 1.5rem;
+	text-align: center;
+	
+	font-size: inherit;
+	font-weight: bold;
+	
+	height: min-content;
+	
+	outline: none;
+	background: transparent;
+	
+	border-radius: 0.5rem;
+	border: 3px solid var(--accent-color);
+	
+	justify-self: center;
+	cursor: pointer;
+	transition: 200ms ease;
 }
 
-.btn button:hover {
-	color: #f4f4f4;
-	cursor: pointer;
-	transition: all ease 0.3s;
-	background-color: #363523;
-	opacity: 0.5;
-	font-weight: lighter;
-	box-shadow: 0 0 5px rgb(216, 213, 16);
+button:hover,
+button:focus{
+	background-color: #00997030;
 }
 
 .enter-phone{
@@ -303,4 +305,8 @@ main .number {
 .faq {
 	padding-bottom: 1rem;
 	margin-bottom: 2rem !important;
+}
+
+.sub-btn{
+	text-align: center;
 }

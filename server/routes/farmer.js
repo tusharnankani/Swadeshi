@@ -27,19 +27,8 @@ router.post(
 		const user = await util.authenticateUser(req);
 
 		if(user != null){
-			const new_product = {
-				category: req.body.category,
-				item: req.body.item,
-				orig_qty: req.body.orig_qty,
-				avail_qty: req.body.avail_qty,
-				price: req.body.price
-			}
-	
-			await User.updateOne({id: user.id}, {
-				$push: {
-					products: new_product
-				}
-			});
+			user.products.push(req.body);
+			user.save();
 			
 			res.status(200).send({ message: "Product added" });
 		}
@@ -49,15 +38,21 @@ router.post(
 );
 
 router.delete(
-	"/product/remove",
+	"/product",
 	async (req, res) => {
 		const user = await util.authenticateUser(req);
-		await user.deleteOne();
-
-		if(user != null)
-			res.send(200).send({ message: "Item deleted" });
-		else
+		if(user == null){
 			res.status(403).send({ message: "User not authenticated" });
+			return;
+		}
+		else if(!req.body.item){
+			res.status(400).send({ message: "No item to delete" });
+		}
+		
+		user.products = user.products.filter(e => e.item != req.body.item);
+		await user.save();
+		
+		res.status(200).send({ message: "OK" });
 	}
 );
 
