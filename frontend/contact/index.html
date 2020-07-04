@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Help / Contact Us </title>
+	
+	<meta charset="UTF-8" />
+	<meta name="description" content = "UnFormat your code. Shift all brackets and semicolons to the right." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel = "icon" href = "../logo.svg" sizes = "any" />
+	
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="style.css" />
+	
+	<script defer="" src="util.js"></script>
+	<script defer="" src="../script.js"></script>
+	
+</head>
+
+<body>
+
+    <nav>
+		<img class="logo" src="../logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="index.html">Home</a> </li>
+			<li><a href="#about">About Us +</a></li>
+			<li><a href="#faqs">FAQs</a></li>
+			<li><a href="#contact">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+    <main>
+		<div class="contact">
+			<a href="index.html" id = "company-name">Contact Us</a>
+			<h2>Swadeshi's Helpline Center</h2>
+			<div id = "number">DIAL: 
+			1800 180 1551</div>
+        </div>
+        <div class="about">
+			<a href="index.html" id = "company-name">FAQs</a>
+			<button class="accordion">Where and when will farmers see the farmer's portal?</button>
+            <div class="panel">
+                <p>
+                    First enter your number, and OTP on the home page, If not signed up on our database, it will not show the Farmer's Portal. It will redirect to a <i>sign up</i> page, where you can select your type, add your details. <br> <br>Once details are added, it will redirect you to the farmer or wholesaler's portal depending on what you chose in sign up page.
+                </p>
+            </div>
+
+            <button class="accordion">How to add items to Manage Items list in Farmer's Portal?</button>
+            <div class="panel">
+                <p>For adding items, there will be a plus icon under category, in manage items, which will redirect you to an <i>Add Items</i> page. You can add the category, item and fill in all the details, and press add. <br><br> The item will be added to your list on <i>Farmer's Portal.</i> </p>
+            </div>
+
+            <button class="accordion">How to remove items from current orders, and move to delivered orders?</button>
+            <div class="panel">
+                <p>For removing items from current orders, and move to delivered orders, you have to click on tick button on the extreme right corner of the list.<br>Your item will be moved to <i>past delivered items.</i></p>
+            </div>
+        </div>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+              });
+            }
+            </script>
+
+    </main>
+
+
+
+</body>
