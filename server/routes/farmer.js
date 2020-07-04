@@ -9,45 +9,24 @@ const User = require("../models/User.js");
 // To retrieve phone number if authenticated
 const util = require("../util.js");
 
-router.get
-(
+router.get(
 	"/products",
-	async (req, res) =>
-	{
-		const ph_no = await util.authenticateUser(req);
-
-		if(ph_no != null)
-		{
-			User.find
-			(
-				{
-					id: ph_no
-				},
-			).then
-			(
-				(result) =>
-				{
-					res.status(200).send({ "products": result.products });
-				}
-			).catch
-			(
-				(err) => console.log(err)
-			);
-		}
+	async (req, res) => {
+		const user = await util.authenticateUser(req);
+		
+		if(user != null)
+			res.status(200).send({ products: user.products });
 		else
-			res.status(401).send({ "message": "User not authenticated" });
+			res.status(403).send({ message: "User not authenticated" });
 	}
 );
 
-router.post
-(
+router.post(
 	"/product/add",
-	async (req, res) =>
-	{
-		const ph_no = await util.authenticateUser(req);
+	async (req, res) => {
+		const user = await util.authenticateUser(req);
 
-		if(ph_no != null)
-		{
+		if(user != null){
 			const new_product = {
 				category: req.body.category,
 				item: req.body.item,
@@ -56,60 +35,29 @@ router.post
 				price: req.body.price
 			}
 	
-			User.updateOne
-			(
-				{
-					id: ph_no
-				},
-				{
-					$push: {
-						products: new_product
-					}
+			await User.updateOne({id: user.id}, {
+				$push: {
+					products: new_product
 				}
-			).then
-			(
-				(result) => res.status(200).send("Product added")
-			).catch
-			(
-				(err) => console.log(err)
-			);
+			});
+			
+			res.status(200).send({ message: "Product added" });
 		}
 		else
-			res.status(401).send({ "message": "User not authenticated" });
+			res.status(401).send({ message: "User not authenticated" });
 	}
 );
 
-router.delete
-(
+router.delete(
 	"/product/remove",
-	async (req, res) =>
-	{
-		const ph_no = await util.authenticateUser(req);
+	async (req, res) => {
+		const user = await util.authenticateUser(req);
+		await user.deleteOne();
 
-		if(ph_no != null)
-		{
-			User.updateOne
-			(
-				{
-					id: ph_no
-				},
-				{
-					$pull: {
-						products: {
-							item: req.body.item
-						}
-					}
-				}
-			).then
-			(
-				res.send(200).send({ "message": "Item deleted" })
-			).catch
-			(
-				(err) => console.log(err)
-			);
-		}
+		if(user != null)
+			res.send(200).send({ message: "Item deleted" });
 		else
-			res.status(401).send({ "message": "User not authenticated" });
+			res.status(403).send({ message: "User not authenticated" });
 	}
 );
 
