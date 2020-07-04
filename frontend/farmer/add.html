@@ -53,12 +53,43 @@
 
             <div class="option-wf">
                 <h4>Select Item: &nbsp&nbsp </h4>
-                <select name="option" id="Category">
-                    <option value="Farmer">Pulses</option>
-                    <option value="Grains">Grains</option>
-                    <option value="Vegetables">Vegetables</option>
-                    <option value="Fruits">Fruits</option>
-                    <option value="Spices">Spices</option>
+                <select name="option" id="Item">
+
+                    <optgroup label="Pulses">
+                        <option value="Chana">Chana</option>
+                        <option value="Moong">Moong</option>
+                        <option value="Tur">Tur</option>
+                        <option value="Urad">Urad</option>
+                    </optgroup>
+
+                    <optgroup label="Grains">
+                        <option value="Rice">Rice</option>
+                        <option value="Maize">Maize</option>
+                        <option value="Wheat">Wheat</option>
+                    </optgroup>
+
+                    <optgroup label="Vegetables">
+                        <option value="Tomatoes">Tomatoes</option>
+                        <option value="Potatoes">Potatoes</option>
+                        <option value="Carrots">Carrots</option>
+                        <option value="Onion">Onion</option>
+                    </optgroup>
+
+                    <optgroup label="Fruits">
+                        <option value="Mangoes">Mangoes</option>
+                        <option value="Apples">Apples</option>
+                        <option value="Bananas">Bananas</option>
+                        <option value="Grapes">Grapes</option>
+                    </optgroup>
+
+                    <optgroup label="Spices">
+                        <option value="Red Chillies">Red Chillies</option>
+                        <option value="Black Pepper">Black Pepper</option>
+                        <option value="Turmeric">Turmeric</option>
+                        <option value="Cardamom">Cardamom</option>
+                        <option value="Coriander">Coriander</option>
+                    </optgroup>
+
                 </select>
             </div>
 
@@ -71,7 +102,7 @@
                 </select>
             </div>
 
-            
+
             <div class = "floating-label">
                 <input type = "text" id = "Quantity" placeholder = "placeholder">
                 <label for = "Quantity">Available Quantity</label>
