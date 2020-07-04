@@ -54,4 +54,7 @@ tr:hover{
     font-weight: 1.3rem;
 }
 
-  
+button {
+    align-items: center;
+    left: 7rem;
+}

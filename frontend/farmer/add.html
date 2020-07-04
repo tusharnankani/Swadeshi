@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel = "icon" href = "../logo.svg" sizes = "any" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="../signup/style.css" />
+	<title>Add Items</title>
+	<script defer="" src="../script.js"></script>
+
+</head>
+<body>
+    <nav>
+		<img class="logo" src="../logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="../index.html">Home</a> </li>
+			<li><a href="#contact">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+
+        <div id = "farmer">Add Items</div>
+
+        <div class="dropdown">
+
+            <div class="option-wf">
+                <h4>Select Category: &nbsp&nbsp </h4>
+                <select name="option" id="Category">
+                    <option value="Pulses">Pulses</option>
+                    <option value="Grains">Grains</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Spices">Spices</option>
+                </select>
+            </div>
+
+            <div class="option-wf">
+                <h4>Select Item: &nbsp&nbsp </h4>
+                <select name="option" id="Item">
+
+                    <optgroup label="Pulses">
+                        <option value="Chana">Chana</option>
+                        <option value="Moong">Moong</option>
+                        <option value="Tur">Tur</option>
+                        <option value="Urad">Urad</option>
+                    </optgroup>
+
+                    <optgroup label="Grains">
+                        <option value="Rice">Rice</option>
+                        <option value="Maize">Maize</option>
+                        <option value="Wheat">Wheat</option>
+                    </optgroup>
+
+                    <optgroup label="Vegetables">
+                        <option value="Tomatoes">Tomatoes</option>
+                        <option value="Potatoes">Potatoes</option>
+                        <option value="Carrots">Carrots</option>
+                        <option value="Onion">Onion</option>
+                    </optgroup>
+
+                    <optgroup label="Fruits">
+                        <option value="Mangoes">Mangoes</option>
+                        <option value="Apples">Apples</option>
+                        <option value="Bananas">Bananas</option>
+                        <option value="Grapes">Grapes</option>
+                    </optgroup>
+
+                    <optgroup label="Spices">
+                        <option value="Red Chillies">Red Chillies</option>
+                        <option value="Black Pepper">Black Pepper</option>
+                        <option value="Turmeric">Turmeric</option>
+                        <option value="Cardamom">Cardamom</option>
+                        <option value="Coriander">Coriander</option>
+                    </optgroup>
+
+                </select>
+            </div>
+
+            <div class="option-wf">
+                <h4>Select Unit: &nbsp&nbsp </h4>
+                <select name="option" id="Unit">
+                    <option value="Quintel">Quintel (Kg)</option>
+                    <option value="Ton">Ton</option>
+                    <option value="Kg">Kg</option>
+                </select>
+            </div>
+
+
+            <div class = "floating-label">
+                <input type = "text" id = "Quantity" placeholder = "placeholder">
+                <label for = "Quantity">Available Quantity</label>
+            </div>
+
+            
+
+            <div class = "floating-label">
+                <input type = "text" id = "Price" placeholder = "placeholder">
+                <label for = "Price">Price / Unit</label>
+            </div>
+
+            <div class="btn">
+                <div class="sub-btn">
+                    <button type="submit" id="Submit">ADD</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        
+
+    </main>
+</body>
+</html>
