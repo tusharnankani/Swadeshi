@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // DB connection
-const db = "mongodb://localhost:27017";
+const db = require("./config/keys.js").mongoURI;
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 mongoose.connect(
@@ -16,7 +16,9 @@ mongoose.connect(
 		useUnifiedTopology: true
 	})
 	.then(() => console.log("MongoDB connected..."))
+	.then(() => mongoose.connection.db.dropDatabase())
 	.catch(console.err);
+
 
 // Middleware
 app.use(express.urlencoded({extended: false}));
