@@ -95,7 +95,7 @@ async function checkAuthentication(){
 	let r = await sendApiRequest("/auth/user");
 	let data = await r.json();
 	
-	let path; 
+	let path;
 	if(r.status == 200){
 		if(data.isFarmer)
 			path = "/dashboard/farmer";
@@ -104,11 +104,9 @@ async function checkAuthentication(){
 	}
 	else if(r.status == 404)
 		path = "/signup";
-	
-	console.log("AUTH", path, r.status, r.status == 404);
-	
+		
 	if(path)
-		window.location.href += path;
+		window.location.pathname += path;
 }
 
 function assertOK(e){
