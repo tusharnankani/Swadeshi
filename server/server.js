@@ -16,7 +16,6 @@ mongoose.connect(
 		useUnifiedTopology: true
 	})
 	.then(() => console.log("MongoDB connected..."))
-	.then(() => mongoose.connection.db.dropDatabase())
 	.catch(console.err);
 
 
