@@ -17,7 +17,8 @@ h1{
 
 #login-box{
 	display: grid;
-	width: 30vw;
+	max-width: 600px;
+	margin: 0 50px;
 }
 
 .floating-label{ 
@@ -65,46 +66,52 @@ label{
 	transition: 0.2s ease all; 
 }
 
-
-.option-wf {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35vw;
-    transition: 0.5s ease;
-} 
-
-select, option {
-    padding: 0.5rem;
-    background: transparent;
-    width: 15vw;
-    font-size: 1em;
-    
+#EntitySelect{
+	display: grid;
+	grid-auto-flow: column;
+	column-gap: 0.5rem;
+	margin: 1em 0;
 }
 
-.option {
-    display:none;
-    position:absolute;
-    top:100%;
-    right:0;
-    left:0;
-    z-index:999;
-    margin:0 0;
-    padding:0 0;
-    list-style:none;
-    border:1px solid #ccc;
-    background-color:white;
-    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+button{
+	padding: 1rem 1.5rem;
+	text-align: center;
+	
+	font-size: inherit;
+	font-weight: bold;
+	
+	height: min-content;
+	
+	outline: none;
+	background: transparent;
+	
+	border-radius: 0.5rem;
+	border: 3px solid var(--accent-color);
+	
+	cursor: pointer;
+	transition: 200ms ease;
 }
 
-.option li {
-    padding:0 6px;
-    margin:0 0;
-    padding:0 10px;
+button:hover,
+button:focus{
+	background-color: #00997030;
 }
-.option li:hover {
-    background-color:#39f;
-    color:white;
+
+#Submit{
+	justify-self: center;
+	margin: 1rem 0;
+	width: 10rem;
+}
+#Submit:hover,
+#Submit:focus{
+	background-color: #009970c0;
+}
+
+.entity.selected{
+	background-color: var(--accent-color);
+}
+
+.entity.disabled{
+	border-color: gray;
+	pointer-events: none;
 }

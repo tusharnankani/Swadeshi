@@ -99,16 +99,16 @@ router.get(
     }
 );
 
-router.get(
+router.post(
 	"/add",
 	async (req, res) => {
-		let user = await Util.authenticateUser(req);
-		if(user == null){
+		let token = await Util.getAuthToken(req);
+		console.log(token, req.cookies);
+		if(!token || !token.isValid()){
 			res.status(403).send(RESPONSE.ACCESS_DENIED);
 			return;
 		}
 		
-		let token = await Util.getAuthToken(req);
 		let body = req.body;
 
 		if(!VALIDATE.NAME.test(body.name))
@@ -118,12 +118,16 @@ router.get(
 			res.status(400).send(RESPONSE.INVALID_ENTITY);
 		
 		else{
-			await new User({
-				id: token.userId,
-				name: body.name,
-				isFarmer: body.isFarmer,
-				isWholesaler: body.isWholesaler
-			});
+			await User.findOneAndUpdate(
+				{id: token.userId},
+				{$set: {
+					id: token.userId,
+					name: body.name,
+					isFarmer: body.isFarmer,
+					isWholesaler: body.isWholesaler
+				}},
+				{upsert: true}
+			);
 			
 			res.status(200).send();
 		}

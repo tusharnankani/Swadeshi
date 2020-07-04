@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<link rel = "icon" href = "../logo.svg" sizes = "any" />
+	<link rel="icon" href="../logo.svg" sizes="any" />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
@@ -37,31 +37,40 @@
 	</nav>
 
 	<main>
-        <div id = "login-box">
+        <div id="login-box">
             <h1>Sign up</h1>
 
-            <div class="option-wf">
-                <select name="option" id="option">
-                    <option value="Farmer">Farmer</option>
-                    <option value="Wholesaler">Wholesaler</option>
-                </select>
+            <div id="EntitySelect">
+				<button class="entity" data-value="farmer">Farmer</button>
+				<button class="entity" data-value="wholesaler">Wholesaler</button>
+				<button class="entity disabled" data-value="consumer">Consumer</button>
             </div>
 
-            <div class = "floating-label">
-                <input type = "text" id = "Name" placeholder = "placeholder">
-                <label for = "Name">Name</label>
+            <div class="floating-label">
+                <input
+					id="Name"
+					type="text"
+					placeholder="placeholder"
+					pattern="[^\s\d]{3,}"
+					required=""
+				/>
+                <label for="Name">Name</label>
             </div>
 
-            <div class = "floating-label">
-                <input type = "number" id = "Aadhar" placeholder = "placeholder" maxlength="12" required>
-                <label for = "Aadhar">Aadhar Card Number</label>
+            <div class="floating-label">
+                <input
+					id="Aadhar"
+					type="text"
+					placeholder="placeholder"
+					pattern="\d{12}"
+					minlength="12"
+					maxlength="12"
+					required=""
+				/>
+                <label for="Aadhar">Aadhar Card Number</label>
             </div>
-        </div>
-
-        <div class="btn">
-            <div class="sub-btn">
-                <button type="submit" id="Submit">SUBMIT</button>
-            </div>
+               
+			<button type="submit" id="Submit">SUBMIT</button>
         </div>
 
     </main>

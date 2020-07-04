@@ -1,5 +1,3 @@
-const get = document.querySelector.bind(document);
-
 let
 	phone,
 	otp,
@@ -8,6 +6,8 @@ let
 ;
 
 window.addEventListener("load", e => {
+	checkAuthentication();
+	
 	phone = get("#Number");
 	otp = get("#Otp");
 	
@@ -19,8 +19,6 @@ window.addEventListener("load", e => {
 		if(checkInputs())
 			getOtp(phone.value);
 	});
-	
-	checkAuthentication();
 });
 
 let state = "phone";
@@ -60,10 +58,6 @@ function checkInputs(){
 	return isValid;
 }
 
-function isInputValid(input){
-	return new RegExp(input.pattern).test(input.value);
-}
-
 function displayError(inputWrapper, message){
 	if(typeof inputWrapper == "string")
 		inputWrapper = get(inputWrapper);
@@ -90,47 +84,6 @@ async function authenticateUser(phone, otp){
 		}
 	});
 }
-
-async function checkAuthentication(){
-	let r = await sendApiRequest("/auth/user");
-	let data = await r.json();
-	
-	let path;
-	if(r.status == 200){
-		if(data.isFarmer)
-			path = "/dashboard/farmer";
-		else if(data.isWholesaler)
-			path = "/dashboard/wholesaler";
-	}
-	else if(r.status == 404)
-		path = "/signup";
-		
-	if(path)
-		window.location.pathname += path;
-}
-
-function assertOK(e){
-	if(!e || !e.status || e.status != 200)
-		throw new Error("Assert OK failed");
-	
-	return e;
-}
-
-async function sendApiRequest(url, options = {}){
-	options = Object.assign({}, options);
-	
-	if(typeof options.body == "object"){
-		if(!options.headers)
-			options.headers = {};
-		if(!options.headers["Content-Type"])
-			options.headers["Content-Type"] = "application/json";
-		
-		options.body = JSON.stringify(options.body);
-	}
-	
-	return fetch(url, options);
-}
-
 
 // A+ A- Buttons
 

@@ -15,6 +15,8 @@ body {
 	
 	min-height: 100vh;
 	
+	--accent-color: #009970;
+	
 	color: #39424e;
 	background: #f4faff;
 	background-image: url(background.svg);
