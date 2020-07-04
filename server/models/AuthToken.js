@@ -32,7 +32,7 @@ AuthTokenSchema.statics.generateToken = async (phone) => {
 	
 	await mongoose.model("AuthToken").findOneAndUpdate(
 		{id: token},
-		{$set: {phone, expires}},
+		{$set: {userId: phone, expires}},
 		{upsert: true}
 	);
 	

@@ -103,7 +103,6 @@ router.post(
 	"/add",
 	async (req, res) => {
 		let token = await Util.getAuthToken(req);
-		console.log(token, req.cookies);
 		if(!token || !token.isValid()){
 			res.status(403).send(RESPONSE.ACCESS_DENIED);
 			return;
