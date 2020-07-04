@@ -85,6 +85,12 @@ router.post(
 router.get(
 	"/user",
 	async (req, res) => {
+		let token = await Util.getAuthToken(req);
+		if(!token || !token.isValid()){
+			res.status(403).send(RESPONSE.ACCESS_DENIED);
+			return;
+		}
+		
 		let user = await Util.authenticateUser(req);
 		if(user != null)
 			res.status(200).send(user);

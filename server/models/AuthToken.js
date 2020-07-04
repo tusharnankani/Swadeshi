@@ -17,7 +17,10 @@ const AuthTokenSchema = new mongoose.Schema({
 	}
 });
 
-AuthTokenSchema.methods.isValid = () => !Util.hasExpired(this.expires);
+//Must be normal function, because arrow functions use this of the current context
+AuthTokenSchema.methods.isValid = function(){
+	return !Util.hasExpired(this.expires);
+}
 
 AuthTokenSchema.statics.generateToken = async (phone) => {
 	let token = "";

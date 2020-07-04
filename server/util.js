@@ -11,7 +11,7 @@ const AUTH_COOKIE_OPTIONS = {
 };
 
 function hasExpired(expires){
-	return (!expires || new Date().getTime() > expires.getTime());
+	return (!expires || expires.getTime() <= new Date().getTime());
 }
 
 async function authenticateUser(req){
