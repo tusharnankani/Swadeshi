@@ -68,6 +68,21 @@ router.post(
 	}
 );
 
+router.get(
+	"/logout",
+	async (req, res) => {
+		await Util.getAuthToken(req)
+			.then(e => e.deleteOne());
+		
+		res.cookie(
+			Util.AUTH_COOKIE_NAME,
+			"",
+			Util.AUTH_COOKIE_UNSET
+		);
+		res.status(200).send(RESPONSE.OK);
+	}
+);
+
 router.post(
 	"/otp",
 	async (req, res) => {
