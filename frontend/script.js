@@ -103,3 +103,6 @@ function fontDec(){
 	el.style.fontSize = (fontSize - 1) + 'px';
 	el.style.transition = 'ease 0.3s';
 }
+
+//translateTo("en")
+//translateTo("hi")

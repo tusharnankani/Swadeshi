@@ -1,7 +1,7 @@
 const TRANSLATION = [
 	// TITLE
 	{
-		selector: "head > title",
+		selector: "title",
 		en: "Swadeshi",
 		hi: "स्वदेशी"
 	},
@@ -89,3 +89,8 @@ const TRANSLATION = [
 		hi: "ओटीपी पुनः भेजें"
 	}
 ];
+
+function translateTo(lang){
+	for(let o of TRANSLATION)
+		get(o).innerText = o[lang];
+}
