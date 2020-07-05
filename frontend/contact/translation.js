@@ -83,6 +83,11 @@ const TRANSLATION = [
 		selector: "body > main > div.about > div:nth-child(7) > p",
 		en: "For removing items from current orders, and move to delivered orders, you have to click on tick button on the extreme right corner of the list. Your item will be moved to past delivered items.",
 		hi: "वर्तमान आदेशों से आइटम हटाने के लिए, और वितरित आदेशों पर जाने के लिए, आपको सूची के चरम दाएं कोने पर टिक बटन पर क्लिक करना होगा। आपका आइटम पिछले वितरित आइटमों में ले जाया जाएगा।"
+	},
+	{
+		selector: "[onclick = 'toggleLanguage()'] li",
+		en: "हिन्दी",
+		hi: "English"
 	}
 ];
 
