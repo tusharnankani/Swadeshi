@@ -5,6 +5,8 @@ let
 	submit
 ;
 
+let language = "en";
+
 window.addEventListener("load", e => {
 	checkAuthentication();
 	
@@ -18,6 +20,13 @@ window.addEventListener("load", e => {
 	resendOtp.addEventListener("click", e => {
 		if(checkInputs())
 			getOtp(phone.value);
+	});
+	
+	get("#lang-button").addEventListener("click", () => {
+		if(language == "en")
+			translateTo("hi");
+		else
+			translateTo("en");
 	});
 });
 
@@ -103,6 +112,3 @@ function fontDec(){
 	el.style.fontSize = (fontSize - 1) + 'px';
 	el.style.transition = 'ease 0.3s';
 }
-
-//translateTo("en")
-//translateTo("hi")
