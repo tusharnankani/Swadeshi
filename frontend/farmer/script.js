@@ -1,6 +1,9 @@
 let
 	items,
-	createNewItem
+	createNewItem,
+	
+	openOrders,
+	closedOrders
 ;
 
 window.addEventListener("load", () => {
@@ -14,6 +17,10 @@ window.addEventListener("load", () => {
 		get("#AddItem").classList.toggle("hide");
 		e.preventDefault();
 	});
+	
+	openOrders = get("#open-orders tbody");
+	closedOrders = get("#past-orders tbody");
+	loadOrders();
 	
 	get("#AddNewItem").addEventListener("click", addItem);
 });
@@ -80,18 +87,39 @@ async function addItem(){
 	get("#Price").value = "";
 }
 
-function createOrderRow(p){
+async function loadOrders(){
+	let data = await sendApiRequest("/wholesaler/orders")
+		.then(assertOK)
+		.then(e => e.json());
+	
+	for(let o of data.orders)
+		addOrderRow(o);
+}
+
+function addOrderRow(p){
 	let tr = createElement("tr");
 	
+	let d = new Date(p.date);
+	let date = 
+		(d.getDate()) + "/" +
+		(d.getMonth() + 1) + "/" +
+		(d.getYear() + 1900)
+	;
+	console.log(p)
 	for(let e of [
-			p.date.toLocaleString(),
-			p.category,
-			p.item,
-			p.required + p.unit,
-			"₹ " + p.price,
-			p.phoneNumber
+			date,
+			p.product.category,
+			p.product.item,
+			p.quantity + " " + p.product.unit,
+			"₹ " + p.product.price,
+			p.wholesalerId
 		])
 		createElement("td", tr, {innerText: e});
+	
+	if(p.isOpen)
+		openOrders.appendChild(tr);
+	else
+		closedOrders.appendChild(tr);
 	
 	return tr;
 }

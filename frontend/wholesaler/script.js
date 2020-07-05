@@ -42,7 +42,7 @@ async function loadOrders(){
 
 function addOrderRow(p){
 	let tr = createElement("tr");
-	console.log(p)
+	
 	let d = new Date(p.date);
 	let date = 
 		(d.getDate()) + "/" +
