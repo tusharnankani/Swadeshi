@@ -29,7 +29,7 @@ const TRANSLATION = [
 
 	// CONTACT PAGE
 	{
-		selector: "#company-name",
+		selector: ".contact > #company-name",
 		en: "Contact Us",
 		hi: "संपर्क करें"
 	},
@@ -50,7 +50,7 @@ const TRANSLATION = [
 	},
 	// FAQS
 	{
-		selector: "#company-name",
+		selector: ".about > #company-name",
 		en: "FAQs",
 		hi: "पूछे जाने वाले प्रश्न"
 	},
