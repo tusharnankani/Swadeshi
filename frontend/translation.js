@@ -87,6 +87,11 @@ const TRANSLATION = [
 		selector: "#Resend",
 		en: "Re-Send OTP",
 		hi: "ओटीपी पुनः भेजें"
+	},
+	{
+		selector: "#lang-button",
+		en: "हिन्दी",
+		hi: "English"
 	}
 ];
 
