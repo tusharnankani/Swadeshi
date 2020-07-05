@@ -105,7 +105,7 @@ function addOrderRow(p){
 		(d.getMonth() + 1) + "/" +
 		(d.getYear() + 1900)
 	;
-	console.log(p)
+	
 	for(let e of [
 			date,
 			p.product.category,

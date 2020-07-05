@@ -63,7 +63,7 @@ function addOrderRow(p){
 	if(p.isOpen){
 		let completeButton = createElement("td", tr);
 		createElement("i.fa.fa-check", completeButton);
-		completeButton.addEventListener("click", () => orderComplete(p));
+		completeButton.addEventListener("click", () => orderComplete(p, completeButton));
 		
 		openOrders.appendChild(tr);
 	}
@@ -73,8 +73,8 @@ function addOrderRow(p){
 	return tr;
 }
 
-async function orderComplete(p){
-	let order = this.parentElement;
+async function orderComplete(p, element){
+	let order = element.parentElement;
 	
 	await sendApiRequest("/wholesaler/orders/complete", {
 		method: "PATCH",
@@ -84,7 +84,7 @@ async function orderComplete(p){
 	}).then(assertOK);
 	
 	order.remove();
-	this.remove();
+	element.remove();
 	closedOrders.appendChild(order);
 }
 
@@ -177,7 +177,8 @@ async function postOrder(){
 		method: "POST",
 		body: data
 	}).then(assertOK);
-	items.appendChild(addOrderRow(data));
+	data.isOpen = true;
+	openOrders.appendChild(addOrderRow(data));
 	
 	get("#AddOrder").classList.add("hide");
 	get("#Quantity").value = "";
