@@ -92,5 +92,5 @@ const TRANSLATION = [
 
 function translateTo(lang){
 	for(let o of TRANSLATION)
-		get(o).innerText = o[lang];
+		get(o.selector).innerText = o[lang];
 }
