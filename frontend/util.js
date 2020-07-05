@@ -78,3 +78,8 @@ function createElement(name, parent, options = {}){
 
 	return element;
 }
+
+async function logout(){
+	await sendApiRequest("/auth/logout").then(assertOK);
+	checkAuthentication();
+}

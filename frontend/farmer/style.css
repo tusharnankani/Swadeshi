@@ -4,7 +4,7 @@ ul, li {
 
 /* table styling */
 /* FEATURE TO BE ADDED: specific background colour for specific category */
-.content-table {
+table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
@@ -14,31 +14,31 @@ ul, li {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.content-table thead tr {
+table thead tr {
     background-color: #ffffff;
     color: #000000;
     text-align: left;
     font-weight: bold;
 }
 
-.content-table th,
-.content-table td {
+table th,
+table td {
     padding: 12px 15px;
 }
 
-.content-table tbody tr {
+table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-/* .content-table tbody tr:nth-of-type(even) {
+/* .content-table tbody tr:nth-of-type(2n) {
 background-color: #000000;
 } */
 
-.content-table tbody tr:last-of-type {
+table tbody tr:last-of-type {
     border-bottom: 2px solid #ecf001;
 }
 
-.content-table tbody tr :hover {
+table tbody tr :hover {
     font-weight: bold;
     color: #000000;
     cursor: pointer;
