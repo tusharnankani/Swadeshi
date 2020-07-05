@@ -23,10 +23,8 @@ window.addEventListener("load", e => {
 	});
 	
 	get("#lang-button").addEventListener("click", () => {
-		if(language == "en")
-			translateTo("hi");
-		else
-			translateTo("en");
+		language = (language == "en")?"hi":"en";
+		translateTo(language);
 	});
 });
 
