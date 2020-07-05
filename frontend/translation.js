@@ -92,8 +92,7 @@ const TRANSLATION = [
 		selector: "[onclick = 'toggleLanguage()'] li",
 		en: "हिन्दी",
 		hi: "English"
-	},
-
+	}
 ];
 
 let language = "en";
