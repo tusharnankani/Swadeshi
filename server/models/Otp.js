@@ -40,10 +40,12 @@ OtpSchema.statics.isValid = async (phone, inputOtp) => {
 	if(!otp)
 		return false;
 	
-	if(otp.otp == inputOtp && otp.phone == phone)
-		await otp.deleteOne();
+	if(otp.otp == inputOtp && otp.id == phone){
+		await otp.deleteOne();		
+		return !Util.hasExpired(otp.expires);
+	}
 	
-	return !Util.hasExpired(otp.expires);
+	return false;
 }
 
 const Otp = mongoose.model("Otp", OtpSchema);
