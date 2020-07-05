@@ -85,6 +85,7 @@ label{
 
 .entity.selected{
 	background-color: var(--accent-color);
+	opacity: 0.9;
 }
 
 .entity.disabled{

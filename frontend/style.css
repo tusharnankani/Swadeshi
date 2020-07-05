@@ -310,3 +310,23 @@ main .number {
 .sub-btn{
 	text-align: center;
 }
+
+
+.video {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+/* 
+#farmer-vid, #wholesaler-vid {
+	margin: 2rem;
+	padding: 2rem;
+	position: relative;
+} */
+
+
+button{
+	letter-spacing: 0.1rem;
+	border-width: 0.1rem;
+}
