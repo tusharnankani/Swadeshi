@@ -5,8 +5,6 @@ let
 	submit
 ;
 
-let language = "en";
-
 window.addEventListener("load", e => {
 	checkAuthentication();
 	
@@ -20,11 +18,6 @@ window.addEventListener("load", e => {
 	resendOtp.addEventListener("click", e => {
 		if(checkInputs())
 			getOtp(phone.value);
-	});
-	
-	get("#lang-button").addEventListener("click", () => {
-		language = (language == "en")?"hi":"en";
-		translateTo(language);
 	});
 });
 

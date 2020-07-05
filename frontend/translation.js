@@ -89,13 +89,19 @@ const TRANSLATION = [
 		hi: "ओटीपी पुनः भेजें"
 	},
 	{
-		selector: "#lang-button",
+		selector: "[onclick = 'toggleLanguage()'] li",
 		en: "हिन्दी",
 		hi: "English"
 	}
 ];
 
+let language = "en";
+function toggleLanguage(){
+	language = (language == "en")?"hi":"en";
+	translateTo(language);
+}
+
 function translateTo(lang){
 	for(let o of TRANSLATION)
-		get(o.selector).innerText = o[lang];
+		(get(o.selector) || {}).innerText = o[lang];
 }

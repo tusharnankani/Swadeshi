@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<link rel = "icon" href = "../logo.svg" sizes = "any" />
+	<link rel="icon" href="../logo.svg" sizes="any" />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
 	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="../farmer/style.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../farmer/style.css" />
     
     <title>Wholesaler's Portal</title>
     
-	<script defer="" src="../script.js"></script>
-
+	<script defer="" src="../util.js"></script>
+	<script defer="" src="../translation.js"></script>
+	<script defer="" src="script.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
 				<button onclick="fontDec()">
 					<li class="textsize">A<sup>-</sup></li>
 				</button>
-				<button>
+				<button onclick="toggleLanguage()">
 					<li class="textsize">हिन्दी</li>
 				</button>
 				<button onclick="logout()">
@@ -44,180 +45,100 @@
 	</nav>
 
 	<main>
-
 		<div>
-			<a href="index.html" id = "wholesaler">Wholesaler's Portal</a>
-			<div id = "wholesaler-description">For bulk orders and discount offers.</div>
+			<a href="index.html" id="wholesaler">Wholesaler's Portal</a>
+			<div id="wholesaler-description">For bulk orders and discount offers.</div>
 		</div>
-		<h2>Add Items</h2>
+		
 		<div id="form">
-			<form method="" action="">
-				<div class = "floating-label">
-					<input type = "text" id = "Search" placeholder = "placeholder">
-					<label for = "Search">Search (by Category or Item)</label>
-			    </div>
-			</form>
+			<h2>Order Items</h2>
+			
+			<div id="searchBox">
+				<img id="SearchLogoDisplay" src="../logo.svg" />
+				<input id="searchInput" type="text" autocomplete="off" aria-label="Search" />
+				<div id="dropdown"></div>
+			</div>
 		</div>
 		
-		
-		<!-- VIEW ORDERS -->
-		<div class="view-orders">
+		<section id="ViewOrders">
 			<h2>View Orders</h2>
 
 			<!-- Open Orders -->
-			<div class="open-orders">
-				<h3>Ordered Items</h3>
+			<div>
+				<h3>Open Orders</h3>
 
-				<div class="table">
-					<table class="content-table">
-
-						<thead>
-						  <tr>
+				<table id="open-orders">
+					<thead>
+						<tr>
 							<th>Date</th>
 							<th>Category</th>
 							<th>Item</th>
-							<th>Qty. Ordered</th>
+							<th>Qty. Ordered.</th>
 							<th>Price/kg</th>
 							<th>Farmer's Number</th>
-							<th>Tick</th>
-						  </tr>
-						</thead>
+							<th>Complete</th>
+						</tr>
+					</thead>
 
-						<tbody>
-						  <tr>
-							  <td>29-08-2020</td>
-							  <td>Pulses</td>
-							  <td>Urad</td>
-							  <td>150</td>
-							  <td>50</td>
-							  <td>+91 8967663864</td>
-							  <td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>25-07-2020</td>
-							  <td>Pulses</td>
-							  <td>Chana</td>
-							  <td>120</td>
-							  <td>80</td>
-							  <td>+91 7507663817</td>
-							  <td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							<td>15-07-2020</td>
-							<td>Grains</td>
-							<td>Wheat</td>
-							<td>120</td>
-							<td>60</td>
-							<td>+91 8985685811</td>
-							<td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>05-07-2020</td>
-							  <td>Vegetables</td>
-							  <td>Potatoes</td>
-							  <td>200</td>
-							  <td>40</td>
-							  <td>+91 9787693825</td>
-							  <td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>16-08-2020</td>
-							  <td>Vegetables</td>
-							  <td>Onion</td>
-							  <td>110</td>
-							  <td>50</td>
-							  <td>+91 9587243827</td>
-							  <td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>01-09-2020</td>
-							  <td>Spices</td>
-							  <td>Cardamom</td>
-							  <td>100</td>
-							  <td>250</td>
-							  <td>+91 9987663875</td>
-							  <td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						  <tr>
-							  <td>25-07-2020</td>
-							  <td>Spices</td>
-							  <td>Black Pepper</td>
-							  <td>120</td>
-							  <td>80</td>
-							  <td>+91 9987663845</td>
-							  <td><i class="fa fa-check" aria-hidden="true"></i></td>
-						  </tr>
-						</tbody>
-					</table>
-				</div>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
 
-
-			<!-- Past Deliveries -->
-			<div class="past-orders">
+			<!-- Past Orders -->
+			<div>
 				<h3>Delivered Items</h3>
-				<div class="table">
-					<table class="content-table">
+				
+				<table id="delivered-items">
+					<thead>
+					  <tr>
+						<th>Delivered Date</th>
+						<th>Category</th>
+						<th>Item</th>
+						<th>Qty. Ordered.</th>
+						<th>Price/kg</th>
+						<th>Farmer's Number</th>
+					  </tr>
+					</thead>
 
-						<thead>
-						  <tr>
-							<th>Delivered Date</th>
-							<th>Category</th>
-							<th>Item</th>
-							<th>Qty. Ordered</th>
-							<th>Price/unit</th>
-							<th>Farmer's Number</th>
-						  </tr>
-						</thead>
-
-						<tbody>
-						  <tr>
-							  <td>29-12-2019</td>
-							  <td>Pulses</td>
-							  <td>Moong</td>
-							  <td>100</td>
-							  <td>70</td>
-							  <td>+91 8967663864</td>
-						  </tr>
-						  <tr>
-							  <td>25-02-2019</td>
-							  <td>Pulses</td>
-							  <td>Tur</td>
-							  <td>140</td>
-							  <td>80</td>
-							  <td>+91 7507663817</td>
-						  </tr>
-						  <tr>
-							<td>15-03-2020</td>
-							<td>Grains</td>
-							<td>Maize</td>
-							<td>120</td>
-							<td>60</td>
-							<td>+91 8985685811</td>
-						  </tr>
-						  <tr>
-							  <td>05-09-2019</td>
-							  <td>Vegetables</td>
-							  <td>Tomatoes</td>
-							  <td>150</td>
-							  <td>40</td>
-							  <td>+91 9787693825</td>
-						  </tr>
-						  <tr>
-							  <td>01-11-2019</td>
-							  <td>Spices</td>
-							  <td>Red Chillies</td>
-							  <td>100</td>
-							  <td>250</td>
-							  <td>+91 9987663875</td>
-						  </tr>
-						</tbody>
-					</table>
-				</div>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
-		</div>
-
-
+		</section>
+		
+		<section id="AddOrder" class="hide">			
+			<div id="FloatingBox">
+				<h2>Place Order</h2>
+				
+				<div id="DateWrapper" class="floating-label">
+					<input type="date" id="Date" placeholder="placeholder" />
+					<label for="Date">Date</label>
+				</div>
+				
+				<div id="CategoryWrapper" class="floating-label">
+					<input id="Category" placeholder="placeholder" readonly="" />
+					<label for="Category">Category</label>
+				</div>
+				
+				<div id="ItemWrapper" class="floating-label">
+					<input id="Item" placeholder="placeholder" readonly="" />
+					<label for="Item">Item</label>
+				</div>
+				
+				<div id="QuantityWrapper" class="floating-label">
+					<input id="Quantity" placeholder="placeholder">
+					<label for="Quantity">Order Quantity</label>
+				</div>
+				
+				<div id="PriceWrapper" class="floating-label">
+					<input id="Price" placeholder="placeholder" readonly="" />
+					<label for="Price">Price</label>
+				</div>
+				
+				<button id="AddNewOrder" type="submit">ADD</button>
+			</div>
+		</section>
     </main>
 </body>
 </html>

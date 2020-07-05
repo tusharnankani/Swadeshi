@@ -1,20 +1,28 @@
 const mongoose = require('mongoose');
 
 const OrderSchema = new mongoose.Schema({
-	wholesaler_id: {					// Phone number
-		type: Object(),
+	wholesalerId: {					// Phone number
+		type: String,
 		required: true
 	},
-	farmer_id: {				// Phone number
-		type: Object(),
+	farmerId: {				// Phone number
+		type: String,
 		required: true
 	},
 	date: {
 		type: Date,
 		required: true
 	},
-	isOpen : {
+	isOpen: {
 		type: Boolean,
+		required: true
+	},
+	product: {
+		type: Object,
+		required: true
+	},
+	quantity: {
+		type: Number,
 		required: true
 	}
 });

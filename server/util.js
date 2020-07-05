@@ -6,7 +6,11 @@ const AUTH_TOKEN_LENGTH = 64;
 
 const AUTH_COOKIE_NAME = "x-auth-id-cookie";
 const AUTH_COOKIE_OPTIONS = {
-	maxAge: 60 * 60 * 24 * 2, //2 days
+	maxAge: 60 * 60 * 24 * 2 * 1000, //2 days
+	httpOnly: true
+};
+const AUTH_COOKIE_UNSET = {
+	maxAge: 0,
 	httpOnly: true
 };
 
