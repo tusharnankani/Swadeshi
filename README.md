@@ -6,9 +6,18 @@
 - The solution should enable farmers to create independent accounts and interact with dealers to avail the best profits and deals.
 
 ## Tech Stack
-- Pure HTML5, CSS3 and JavaScript for the frontend.
-- Node.js + Express.js for endpoints and serving static files.
-- MongoDB for the database.
+- Frontend
+	- HTML5
+	- CSS3 
+	- Vanilla JavaScript 
+
+- Backend
+	- Node.js (Express.js)
+
+- Database
+	- MongoDB
+
+
 
 ## Logo
 * The *wheat* represents *farmer's pride*, and green around the wheat represents the *indian fields.*
@@ -37,3 +46,84 @@
 - Edit the MongoDB server Url in `/server/server.js`.
 - Run `npm install` and `npm start` in the `/server` folder.
 - Go to `https://localhost:5000` in your web browser.
+
+
+# *Website Demo*
+### Swadeshi
+#### Clean and simple UI.
+
+![0](https://user-images.githubusercontent.com/61280281/86548601-a71ed900-bf5a-11ea-8d31-2070803e1115.png)
+
+### Implemented Hindi and English, Font+ and Font- features for accesibilities.
+
+![1](https://user-images.githubusercontent.com/61280281/86548607-ab4af680-bf5a-11ea-8088-c1fb6920affc.png)
+
+### Simple Sign Up: Mobile - OTP authentication (*no need for e-mail or password*)
+
+## *SECURITY*: 
+* Mobile - OTP verification
+	* OTP is valid for 5 minutes from issue time
+	* Blind checking of OTP
+* Unified auth & identity token.
+	* Token is stored as a cookie on the client side
+	* Token valid for 2 days
+	* Every privileged request is authenticated on the server side
+	* Client side cookie is set to expire after 2 days
+
+![2](https://user-images.githubusercontent.com/61280281/86548624-bbfb6c80-bf5a-11ea-92d6-b62202ece254.png)
+
+## *Farmer's Portal*: 
+* Minimized the number of buttons and pages for accesibility for the farmer.
+* Everything on one page.
+* Simple add and remove icon.
+
+![3](https://user-images.githubusercontent.com/61280281/86548628-bef65d00-bf5a-11ea-8705-221f173032dd.png)
+
+### Simple add item page: Farmer can add quantity orginally with him and *price per unit item*.
+
+![4](https://user-images.githubusercontent.com/61280281/86548630-c0278a00-bf5a-11ea-9ef8-462fe8a65af7.png)
+
+![5](https://user-images.githubusercontent.com/61280281/86548636-c289e400-bf5a-11ea-8fed-45689bf76d6a.png)
+
+### Initially, the original added quantity is set to available quantity. As quantity is sold, the available quantity is updated, helping farmer keep track of what he added initially to the Farmer's Portal 
+
+![6](https://user-images.githubusercontent.com/61280281/86548641-c4ec3e00-bf5a-11ea-9058-d6a4e25e9892.png)
+
+## *Wholesaler's Portal*: 
+
+![7](https://user-images.githubusercontent.com/61280281/86548644-c7e72e80-bf5a-11ea-9e2b-9623a855af30.png)
+
+### Simple search bar to search product by category or item.
+
+![8](https://user-images.githubusercontent.com/61280281/86548648-cb7ab580-bf5a-11ea-88b4-4cd8a4cfdffb.png)
+
+
+![9](https://user-images.githubusercontent.com/61280281/86548652-cf0e3c80-bf5a-11ea-99eb-80d6e0b4701d.png)
+
+### Simply selecting the item, and ordering directly the required quantity. It will be added to *Ordered Items* for Wholesalers, and *Open Orders* for Farmers.
+
+![10](https://user-images.githubusercontent.com/61280281/86548657-d46b8700-bf5a-11ea-84a3-0fc5b3dfd806.png)
+
+### Simply, pressing the tick icon, if the order is delievered, the wholesaler can update it for himself and the farmers. 
+
+![11](https://user-images.githubusercontent.com/61280281/86548665-da616800-bf5a-11ea-9b33-a22c2c2a1ba8.png)
+
+### Both the Farmer's and the Wholesaler's numbers will be provided on the portals and how the transactions will take place can be discussed over call, according to one's convinience.
+
+# *Contact Page* - Simple and User-frinedly:
+* **24 X 7 Helpline Service Center**
+* **[Videos](https://github.com/tusharnankani/TSECHackathon/tree/master/frontend/videos) in Hindi explaining working of site to help both, the farmers and the wholesalers.**
+* **Added FAQs, in hindi and english**
+
+![12](https://user-images.githubusercontent.com/61280281/86548673-e1887600-bf5a-11ea-9fca-7104ec9d52f4.png)
+![13](https://user-images.githubusercontent.com/61280281/86548675-e3523980-bf5a-11ea-87bf-feaf419a03c7.png)
+![14](https://user-images.githubusercontent.com/61280281/86548678-e3ead000-bf5a-11ea-8ee2-63145bfcaec7.png)
+
+
+# *Authors*
+* Harsh Kapadia (HarshKapadia2, harshgkapadia@gmail.com)
+	- [LinkedIn](http://www.linkedin.com/in/harsh-kapadia-426999175)
+* Kartik Soneji (KartikSoneji, kartiksoneji@rocketmail.com)
+	- [LinkedIn](https://www.linkedin.com/in/kartiksoneji)
+* Tushar Nankani (tusharnankani, tusharnankani3@gmail.com)
+	- [LinkedIn](https://www.linkedin.com/in/tusharnankani)
