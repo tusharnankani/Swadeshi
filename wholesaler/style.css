@@ -1,0 +1,225 @@
+input{
+	border: none;
+	outline: none;
+
+	background-color: #fff8;
+	transition: all 200ms ease;
+}
+
+input[type = text]{
+	font-size: 1rem;
+
+	padding: 0;
+
+	width: 100%;
+	resize: none;
+
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+#Search{
+	max-width: 70vw;
+	height: min-content;
+	place-content: center;
+	padding: 2rem;
+}
+
+#searchBox{
+	display: grid;
+	grid-template-areas:
+		"logo		search"
+		"dropdown	dropdown"
+	;
+	grid-template-columns: min-content 1fr;
+
+	width: 60vw;
+
+	margin-top: 2rem;
+	padding: 1rem;
+
+	border-radius: 1.5rem;
+	background-color: #fff8;
+
+	transition: all 200ms linear;
+}
+#searchBox:hover{
+	background-color: #fffb
+}
+#searchBox:focus,
+#searchBox:focus-within{
+	background-color: white;
+	box-shadow: #000a 0 0 10px;
+}
+
+#SearchLogoDisplay{
+	grid-area: logo;
+	width: auto;
+	height: 100%;
+}
+
+#searchInput{
+	grid-area: search;
+	font-size: 2.5rem;
+	border: none;
+	width: auto;
+	margin-left: 1.25rem;
+	background-color: transparent;
+}
+
+#dropdown{
+	grid-area: dropdown;
+	max-height: 0;
+
+	background-color: #fff8;
+
+	overflow: hidden;
+
+	border-radius: 2rem;
+	margin-top: 0;
+
+	transition: all 500ms ease;
+}
+#dropdown.show{
+	max-height: 60vh;
+	margin-top: 1.5rem;
+}
+
+.dropdown-item{
+	display: grid;
+	grid-template-areas:
+		"category	price"
+		"item		availableQty";
+	grid-template-columns: 1fr 1fr;
+	row-gap: 1rem;
+
+	color: black;
+	background-color: transparent;
+	
+	border-bottom: 2px solid var(--accent-color);
+	
+	font-size: 1.25rem;
+	line-height: 1rem;
+
+	padding: 1.25rem 1.5rem;
+
+	cursor: pointer;
+	user-select: none;
+
+	transition: all 200ms linear;
+}
+.dropdown-item.hide{
+	display: none;
+}
+.dropdown-item:first-child{
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+.dropdown-item:last-child{
+	border-radius: 0 0 0.5rem 0.5rem;
+	border-bottom: none;
+}
+.dropdown-item:hover{
+	background-color: white;
+}
+
+#Appointment{
+	place-content: center;
+	max-width: 70vw;
+}
+
+#appointmentForm{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: rem;
+
+	width: fit-content;
+	height: fit-content;
+
+	font-size: 2rem;
+	padding: 1rem;
+
+	border-radius: 1.5rem;
+	background-color: #fff8;
+}
+
+#appointmentForm h2{
+	margin: 0;
+	text-align: center;
+}
+
+#appointmentForm input{
+	border-radius: 20px;
+	font-size: inherit;
+	padding: 0.5rem 1rem;
+}
+#appointmentForm input[type = text]{
+	max-width: 15rem;
+}
+#appointmentForm input::placeholder{
+	color: #888;
+}
+
+#appointmentForm > h2{
+	color: black;
+	grid-column: span 2;
+}
+
+#appointmentForm #doctor{
+	max-width: unset;
+	grid-column: span 2;
+	font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px){
+	#appointmentForm #firstName,
+	#appointmentForm #lastName{
+		grid-column: span 2;
+	}
+}
+
+label{
+	display: inline-block;
+	text-align: center;
+	line-height: 2rem;
+}
+
+#gender{
+	grid-column: span 2;
+
+	display: grid;
+	align-items: center;
+	grid-template-rows: 1fr;
+	grid-auto-flow: column;
+
+	border: none;
+}
+
+input[type = time]{
+	font-size: 1.2rem;
+	cursor: text;
+}
+
+input[readonly]{
+	cursor: default;
+}
+
+input[type = submit]{
+	grid-column: span 2;
+	cursor: pointer;
+}
+input[type = submit]:focus{
+	background-color: white;
+}
+
+#AddOrder{
+	position: fixed;
+	top: 4rem;
+	left: 0;
+	
+	width: 100vw;
+	height: calc(100vh - 4rem);
+	
+	backdrop-filter: blur(25px);
+	
+	background: transparent;
+}

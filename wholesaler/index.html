@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="icon" href="../logo.svg" sizes="any" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="../farmer/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <title>Wholesaler's Portal</title>
+    
+	<script defer="" src="../util.js"></script>
+	<script defer="" src="../translation.js"></script>
+	<script defer="" src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+		<img class="logo" src="../logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="../index.html">Home</a> </li>
+			<li><a href="../contact/index.html">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+				<button onclick="toggleLanguage()">
+					<li class="textsize">हिन्दी</li>
+				</button>
+				<button onclick="logout()">
+					<li class="textsize">Log Out</li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+		<div>
+			<a href="index.html" id="wholesaler">Wholesaler's Portal</a>
+			<div id="wholesaler-description">For bulk orders and discount offers.</div>
+		</div>
+		
+		<div id="form">
+			<h2>Order Items</h2>
+			
+			<div id="searchBox">
+				<img id="SearchLogoDisplay" src="../logo.svg" />
+				<input id="searchInput" type="text" autocomplete="off" aria-label="Search" />
+				<div id="dropdown"></div>
+			</div>
+		</div>
+		
+		<section id="ViewOrders">
+			<h2>View Orders</h2>
+
+			<!-- Open Orders -->
+			<div>
+				<h3>Open Orders</h3>
+
+				<table id="open-orders">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Category</th>
+							<th>Item</th>
+							<th>Qty. Ordered.</th>
+							<th>Price/kg</th>
+							<th>Farmer's Number</th>
+							<th>Complete</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Past Orders -->
+			<div>
+				<h3>Delivered Items</h3>
+				
+				<table id="delivered-items">
+					<thead>
+					  <tr>
+						<th>Delivered Date</th>
+						<th>Category</th>
+						<th>Item</th>
+						<th>Qty. Ordered.</th>
+						<th>Price/kg</th>
+						<th>Farmer's Number</th>
+					  </tr>
+					</thead>
+
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		
+		<section id="AddOrder" class="hide">			
+			<div id="FloatingBox">
+				<h2>Place Order</h2>
+				
+				<div id="DateWrapper" class="floating-label">
+					<input type="date" id="Date" placeholder="placeholder" />
+					<label for="Date">Date</label>
+				</div>
+				
+				<div id="CategoryWrapper" class="floating-label">
+					<input id="Category" placeholder="placeholder" readonly="" />
+					<label for="Category">Category</label>
+				</div>
+				
+				<div id="ItemWrapper" class="floating-label">
+					<input id="Item" placeholder="placeholder" readonly="" />
+					<label for="Item">Item</label>
+				</div>
+				
+				<div id="QuantityWrapper" class="floating-label">
+					<input id="Quantity" placeholder="placeholder">
+					<label for="Quantity">Order Quantity</label>
+				</div>
+				
+				<div id="PriceWrapper" class="floating-label">
+					<input id="Price" placeholder="placeholder" readonly="" />
+					<label for="Price">Price</label>
+				</div>
+				
+				<button id="AddNewOrder" type="submit">ADD</button>
+			</div>
+		</section>
+    </main>
+</body>
+</html>

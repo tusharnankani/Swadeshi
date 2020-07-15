@@ -1,0 +1,332 @@
+/* Google font: Monteserrat*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+body {
+	display: grid;
+	grid-template-areas:
+		"nav"
+		"main"
+	;
+	grid-template-rows: 4em auto;
+	justify-content: center;
+	
+	margin: 0;
+	padding: 0;
+	
+	min-height: 100vh;
+	
+	--accent-color: #009970;
+	
+	color: #39424e;
+	background: #f4faff;
+	background-image: url(background.svg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* background-position: center; */
+	background-size: cover;
+	padding-bottom: 2.5rem;
+	font-family: "Montserrat", Sans-Serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: transparent underline;
+	transition: text-decoration-color 200ms ease;
+}
+a:hover {
+	text-decoration-color: unset;
+}
+
+/* nav list of items */
+nav {
+	position: fixed;
+	width: 100%;
+	align-items: center;
+	display: flex;
+	height: 4em;
+	background: rgba(0, 0, 0, 0.87);
+}
+
+nav ul {
+	/* margin: 150px auto 0;  */
+	padding: 0; 
+	display: table;
+	text-align: center;
+	display: table;
+	list-style: none;
+	width: 100%;
+	justify-content: center;
+}
+
+nav ul li {
+	margin: 0 1rem;
+	padding: 15px 20px;
+	display: table-cell; 
+	position: relative; 
+  /* padding: 15px 0; */
+}
+
+nav ul li a {
+	color: #f4f4f4;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	padding: 15px 2px;
+	position: relative;
+	text-decoration: none;
+}
+
+nav ul li a:after {	
+	background: none repeat scroll 0 0 transparent;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: rgb(226, 223, 52);
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+
+nav ul li a:hover:after { 
+	width: 100%; 
+	left: 0;
+}
+
+nav .logo {
+	max-height: 100%;
+	padding: 0.3rem;
+	box-sizing: border-box;
+}
+
+/* Font icon + - */
+.text-s button {
+	color: #f4f4f4;
+	font-size: 1.1rem;
+	background-color: transparent;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	position: relative;
+	padding: 1px;
+	margin: 2px;
+	border: none;
+	border-style: none;
+}
+
+.text-s button :hover {
+	cursor: pointer;
+	outline: none;
+	background-color: #f4f4f4;
+	color: black;
+	transition: ease 0.4s;
+}
+.text-s :active {
+	cursor: pointer;
+	border: none;
+	border-style: none;
+	opacity: 0.6;
+}
+
+main {
+	display: grid;
+	grid-area: main;
+	max-width: 70vw;
+	margin-top: 3rem;
+	row-gap: 2rem;
+}
+
+/* Main title */
+#company-name, #farmer, #wholesaler {
+	font-size: 3.2rem;
+	font-weight: bolder;
+}
+#tagline, #farmer-description, #wholesaler-description{
+	letter-spacing: 0.1rem;
+	font-size: 1.5rem;
+}
+
+.description {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	justify-content: center;
+}
+
+.farmer, .wholesale {
+	max-width: 25rem;
+	padding: 2rem;
+}
+
+.farmer h1, .wholesale h1,
+.farmer .content, .wholesale .content {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 1.4rem;
+}
+
+/* For phone number */
+.enter-phone{
+	top: 0rem;
+}
+
+
+/* Form */
+.floating-label{ 
+	font-size: 1em;
+	position: relative;
+	margin: 1em;
+}
+
+input{
+	color: inherit;
+	font-size: 1.25em;
+	
+	padding: 1rem;
+	display: block;
+	width: 100%;
+	
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #757575;
+}
+input::placeholder{
+	color: transparent;
+}
+input:focus{
+	outline: none;
+	border-bottom: 2px solid rgb(56, 48, 4); 
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+	top: -0.6rem;
+	font-size: 0.9rem;
+	color: rgb(56, 48, 4);
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after{
+	width: 50%;
+}
+
+.floating-label label{
+	color: #999; 
+	position: absolute;
+	pointer-events: none;
+	left: 0.5em;
+	top: 1em;
+	transition: 0.2s ease all; 
+}
+
+
+button{
+	padding: 1rem 1.5rem;
+	text-align: center;
+	
+	font-size: inherit;
+	font-weight: bold;
+	
+	height: min-content;
+	
+	outline: none;
+	background: transparent;
+	
+	border-radius: 0.5rem;
+	border: 3px solid var(--accent-color);
+	
+	justify-self: center;
+	cursor: pointer;
+	transition: 200ms ease;
+}
+
+button:hover,
+button:focus{
+	background-color: #00997030;
+}
+
+.enter-phone{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.hide{
+	display: none;
+}
+
+#OtpWrapper input { 
+	-webkit-text-security: square; 
+}
+
+main .number {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.accordion {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	font-weight: bold;
+	transition: 0.4s;
+}
+  
+.active, .accordion:hover {
+	background-color: #74777c;
+	color: #f4f4f4;
+}
+  
+.accordion:after {
+	content: '\002B';
+	color: transparent;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+  
+.active:after {
+	content: "\2212";
+}
+  
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+
+.faq {
+	padding-bottom: 1rem;
+	margin-bottom: 2rem !important;
+}
+
+.sub-btn{
+	text-align: center;
+}
+
+
+.video {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+/* 
+#farmer-vid, #wholesaler-vid {
+	margin: 2rem;
+	padding: 2rem;
+	position: relative;
+} */
+
+
+button{
+	letter-spacing: 0.1rem;
+	border-width: 0.1rem;
+}

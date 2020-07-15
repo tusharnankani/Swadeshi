@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="icon" href="../logo.svg" sizes="any" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Farmer's Portal</title>
+
+	<script defer="" src="../util.js"></script>
+	<script defer="" src="../translation.js"></script>
+	<script defer="" src="script.js"></script>
+</head>
+<body>
+    <nav>
+		<img class="logo" src="../logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="../index.html">Home</a> </li>
+			<li><a href="../contact/index.html">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+				<button onclick="toggleLanguage()">
+					<li class="textsize">हिन्दी</li>
+				</button>
+				<button onclick="logout()">
+					<li class="textsize">Log Out</li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+		<div id="companyName">
+			<a href="index.html" id="farmer">Farmer's Portal</a>
+			<div id="farmer-description">One stop shop for farmers.</div>
+		</div>
+
+		<!-- MANAGE ITEMS -->
+		<section id="ManageItems">
+			<h2>Manage Items</h2>
+			<table id="Items" class="content-table">
+				<thead>
+					<tr>
+						<th>Category</th>
+						<th>Item</th>
+						<th>Original Qty.</th>
+						<th>Available Qty.</th>
+						<th>Price/kg</th>
+						<th>REMOVE</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th id="createNewItem" colspan="6">
+							<a href="#">
+								<i class="fa fa-plus-circle" aria-hidden="true"></i>
+							</a>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- VIEW ORDERS -->
+		<section id="ViewOrders">
+			<h2>View Orders</h2>
+
+			<!-- Open Orders -->
+			<div>
+				<h3>Open Orders</h3>
+
+				<table id="open-orders">
+					<thead>
+						<tr>
+							<th>Order Date</th>
+							<th>Category</th>
+							<th>Item</th>
+							<th>Qty. Reqd.</th>
+							<th>Price/kg</th>
+							<th>Wholesaler's Number</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Past Orders -->
+			<div>
+				<h3>Past Orders</h3>
+				
+				<table id="past-orders">
+					<thead>
+					  <tr>
+						<th>Order Date</th>
+						<th>Category</th>
+						<th>Item</th>
+						<th>Qty. Reqd.</th>
+						<th>Price/kg</th>
+						<th>Wholesaler's Number</th>
+					  </tr>
+					</thead>
+
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		
+		<section id="AddItem" class="hide">			
+			<div id="FloatingBox">
+				<h2>Add Item</h2>
+				
+				<div id="ItemWrapper" class="option-wf">
+					<label for="Item">Select Item:</label>
+					<select name="option" id="Item">
+						<optgroup label="Pulses">
+							<option value="Chana">Chana</option>
+							<option value="Moong">Moong</option>
+							<option value="Tur">Tur</option>
+							<option value="Urad">Urad</option>
+						</optgroup>
+
+						<optgroup label="Grains">
+							<option value="Rice">Rice</option>
+							<option value="Maize">Maize</option>
+							<option value="Wheat">Wheat</option>
+						</optgroup>
+
+						<optgroup label="Vegetables">
+							<option value="Tomatoes">Tomatoes</option>
+							<option value="Potatoes">Potatoes</option>
+							<option value="Carrots">Carrots</option>
+							<option value="Onion">Onion</option>
+						</optgroup>
+
+						<optgroup label="Fruits">
+							<option value="Mangoes">Mangoes</option>
+							<option value="Apples">Apples</option>
+							<option value="Bananas">Bananas</option>
+							<option value="Grapes">Grapes</option>
+						</optgroup>
+
+						<optgroup label="Spices">
+							<option value="Red Chillies">Red Chillies</option>
+							<option value="Black Pepper">Black Pepper</option>
+							<option value="Turmeric">Turmeric</option>
+							<option value="Cardamom">Cardamom</option>
+							<option value="Coriander">Coriander</option>
+						</optgroup>
+					</select>
+				</div>
+
+				<div id="UnitWrapper" class="option-wf">
+					<label>Select Unit:</label>
+					<select name="option" id="Unit">
+						<option value="Quintal (Kg)" data-kg="100">Quintal (Kg)</option>
+						<option value="Ton" data-kg="1000">Ton</option>
+						<option value="Kg" data-kg="1">Kg</option>
+					</select>
+				</div>
+				
+				<div id="QuantityWrapper" class="floating-label">
+					<input type="text" id="Quantity" placeholder="placeholder">
+					<label for="Quantity">Available Quantity</label>
+				</div>
+				
+				<div id="PriceWrapper" class="floating-label">
+					<input type="text" id="Price" placeholder="placeholder">
+					<label for="Price">Price / kg</label>
+				</div>
+				
+				<button id="AddNewItem" type="submit">ADD</button>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

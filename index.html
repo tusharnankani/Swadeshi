@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Swadeshi</title>
+	
+	<meta charset="UTF-8" />
+	<meta name="description" content = "UnFormat your code. Shift all brackets and semicolons to the right." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel = "icon" href = "logo.svg" sizes = "any" />
+	
+	<link rel="stylesheet" href="style.css" />
+	
+	<script defer="" src="util.js"></script>
+	<script defer="" src="translation.js"></script>
+	<script defer="" src="script.js"></script>
+	
+</head>
+
+<body id="body">
+	<nav>
+		<img class="logo" src="logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="index.html">Home</a> </li>
+			<li><a href="contact/index.html">About Us +</a></li>
+			<li><a href="contact/index.html">FAQs</a></li>
+			<li><a href="contact/index.html">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+				<button onclick="toggleLanguage()">
+					<li class="textsize">हिन्दी</li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+		<div>
+			<a href="index.html" id = "company-name">Swadeshi</a>
+			<div id = "tagline">Connecting farmers everywhere.</div>
+		</div>
+
+		<div class="description">
+			<div class="farmer">
+				<h1>
+					For Farmers
+				</h1>
+				<div class="content">
+					Add your vegetables, fruits and pulses right away!
+				</div>
+			</div>
+			<div class="wholesale">
+				<h1>
+					For Wholesalers
+				</h1>
+				<div class="content">
+					For bulk orders and extra offers, sign up with us!
+				</div>
+			</div>
+		</div>
+		
+		<div class="enter-phone">
+			<div class="form">
+				<h2>Please enter your Phone Number</h2>
+			
+				<div class = "floating-label" id = "NumberWrapper">
+					<input
+						id = "Number"
+						type = "tel"
+						placeholder = "placeholder"
+						pattern="[0-9]{10}"
+						maxlength="10"
+						required=""
+					/>
+					<label for = "Number">Contact Number</label>
+				</div>
+				
+				<h5><sup>*</sup> A 4-digit OTP will be sent to your Phone Number</h5>
+
+				<div class = "floating-label hide" id = "OtpWrapper">
+					<input
+						id = "Otp"
+						type = "otp"
+						placeholder = "placeholder"
+						pattern="[0-9]{4}"
+						maxlength="4"
+						required=""
+					/>
+					<label for = "Otp">OTP</label>
+				</div>
+
+				<div class="btn">
+					<div class="sub-btn">
+						<button type="submit" id="Submit">SUBMIT</button>
+					</div>
+
+					<div class="hide">
+						<button id="Resend">Re-Send OTP</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+	</main>
+</body>
+
+</html>

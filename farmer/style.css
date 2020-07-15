@@ -1,0 +1,114 @@
+ul, li {
+    list-style: none;
+}
+
+/* table styling */
+/* FEATURE TO BE ADDED: specific background colour for specific category */
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* .content-table tbody tr:nth-of-type(2n) {
+background-color: #000000;
+} */
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #ecf001;
+}
+
+table tbody tr :hover {
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+
+i {
+    font-size: 1.25rem;
+}
+
+tr:hover{
+    background-color: rgb(243, 243, 214);
+    opacity: 0.85;
+    font-weight: 1.3rem;
+}
+
+main{
+	display: grid;
+	width: 100vw;
+	place-content: center;
+}
+
+.hide{
+	display: none;
+}
+
+section{
+	display: grid;
+	place-content: center;
+}
+
+#companyName{
+	display: grid;
+}
+
+#AddItem{
+	position: fixed;
+	top: 4rem;
+	left: 0;
+	
+	width: 100vw;
+	height: calc(100vh - 4rem);
+	
+	backdrop-filter: blur(25px);
+	
+	background: transparent;
+}
+
+#FloatingBox{
+	display: grid;
+	
+	width: 50vw;
+	padding: 1rem 3rem;
+	
+	border-radius: 3rem;
+	background: #f4faff;
+	
+	box-shadow: 0 0 10px #0003;
+}
+
+#FloatingBox .option-wf{
+	display: grid;
+	grid-auto-flow: column;
+	padding: 1rem 0;
+}
+
+#Price::before{
+	content: "₹";
+}
+
+button {
+	max-width: 10rem;
+    margin: 0 2rem;
+}

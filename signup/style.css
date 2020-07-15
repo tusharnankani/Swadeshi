@@ -1,0 +1,94 @@
+#sign-up {
+	font-size: 3.2rem;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+}
+
+h1{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+}
+
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+
+#login-box{
+	display: grid;
+	max-width: 600px;
+	margin: 0 50px;
+}
+
+.floating-label{ 
+	font-size: 1em;
+	position: relative;
+	margin: 1em;
+}
+
+input{
+	color: inherit;
+	font-size: 1.25em;
+	
+	padding: 1rem;
+	display: block;
+	width: 100%;
+	
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #757575;
+}
+input::placeholder{
+	color: transparent;
+}
+input:focus{
+	outline: none;
+	border-bottom: 2px solid rgb(56, 48, 4); 
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label{
+	top: -0.6rem;
+	font-size: 0.9rem;
+	color: rgb(56, 48, 4);
+}
+input:focus ~ .bar:before,
+input:focus ~ .bar:after{
+	width: 50%;
+}
+
+label{
+	color: #999; 
+	position: absolute;
+	pointer-events: none;
+	left: 0.5em;
+	top: 1em;
+	transition: 0.2s ease all; 
+}
+
+#EntitySelect{
+	display: grid;
+	grid-auto-flow: column;
+	column-gap: 0.5rem;
+	margin: 1em 0;
+}
+
+#Submit{
+	justify-self: center;
+	margin: 1rem 0;
+	width: 10rem;
+}
+#Submit:hover,
+#Submit:focus{
+	background-color: #009970c0;
+}
+
+.entity.selected{
+	background-color: var(--accent-color);
+	opacity: 0.9;
+}
+
+.entity.disabled{
+	border-color: gray;
+	pointer-events: none;
+}

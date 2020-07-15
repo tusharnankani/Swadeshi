@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="icon" href="../logo.svg" sizes="any" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+
+	<link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <title>Sign Up</title>
+    
+	<script defer="" src="../util.js"></script>
+	<script defer="" src="../translation.js"></script>
+	<script defer="" src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+		<img class="logo" src="../logo.svg" alt="logo" />
+		
+		<ul>
+			<li><a href="../index.html">Home</a> </li>
+			<li><a href="../contact/index.html">Contact Us</a></li>
+			<div class="text-s">
+				<button  onclick="fontInc()">
+					<li class="textsize">A<sup>+</sup></li>
+				</button>
+				<button onclick="fontDec()">
+					<li class="textsize">A<sup>-</sup></li>
+				</button>
+				<button onclick="toggleLanguage()">
+					<li class="textsize">हिन्दी</li>
+				</button>
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+        <div id="login-box">
+            <h1>Sign up</h1>
+
+            <div id="EntitySelect">
+				<button class="entity" data-value="farmer">Farmer</button>
+				<button class="entity" data-value="wholesaler">Wholesaler</button>
+				<button class="entity disabled" data-value="consumer">Consumer</button>
+            </div>
+
+            <div class="floating-label">
+                <input
+					id="Name"
+					type="text"
+					placeholder="placeholder"
+					pattern="[^\s\d]{3,}"
+					required=""
+				/>
+                <label for="Name">Name</label>
+            </div>
+
+            <div class="floating-label">
+                <input
+					id="Aadhar"
+					type="text"
+					placeholder="placeholder"
+					pattern="\d{12}"
+					minlength="12"
+					maxlength="12"
+					required=""
+				/>
+                <label for="Aadhar">Aadhar Card Number</label>
+            </div>
+               
+			<button type="submit" id="Submit">SUBMIT</button>
+        </div>
+
+    </main>
+</body>
+</html>
