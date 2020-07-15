@@ -1,6 +1,10 @@
 echo "Deploying site with mock server";
 
-echo -e "\n\n/* ----- Mock Server ----- */\n\n" >> frontend/util.js;
-cat frontend/mock-server.js >> frontend/util.js;
+if [ -d "frontend" ]; then
+	cd frontend;
+fi;
+
+echo -e "\n\n\n/* ----- Mock Server ----- */\n\n\n" >> util.js;
+cat mock-server.js >> util.js;
 
 echo "Done.";
