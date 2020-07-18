@@ -2,8 +2,18 @@ async function sendMockApiRequest(url, options){
 	return router.route(url, options);
 }
 
+async function checkMockAuthentication(){
+	let path = await routePath();
+	if(!path)
+		return;
+	path = "/TSECHackathon" + path;
+	if((path + "/") != window.location.pathname && path != window.location.pathname)
+		window.location.pathname = path;
+}
+
 window.addEventListener("load", () => {
 	sendApiRequest = sendMockApiRequest;
+	checkAuthentication = checkMockAuthentication;
 });
 
 //Router
