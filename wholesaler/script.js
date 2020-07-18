@@ -173,10 +173,13 @@ async function postOrder(){
 		quantity: +get("#Quantity").value
 	};
 	
-	await sendApiRequest("/wholesaler/orders", {
+	let order = await sendApiRequest("/wholesaler/orders", {
 		method: "POST",
 		body: data
-	}).then(assertOK);
+	})
+		.then(assertOK)
+		.then(e => e.json());
+	data._id = order._id;
 	data.isOpen = true;
 	openOrders.appendChild(addOrderRow(data));
 	
