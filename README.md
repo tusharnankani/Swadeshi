@@ -1,5 +1,3 @@
-![visitors](https://visitor-badge.glitch.me/badge?page_id=https://github.com/tusharnankani/TSECHackathon)
-
 # *TSEC Codestorm - Hackathon'20*
 
 ## Problem Statement

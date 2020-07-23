@@ -19,16 +19,20 @@ router.post(
 		}
 		
 		let data = req.body;
-		await new Order({
+		let order = new Order({
 			wholesalerId: data.wholesalerId,
 			farmerId: data.farmerId,
 			product: data.product,
 			date: data.date,
 			isOpen: true,
 			quantity: data.quantity
-		}).save();
+		});
+		await order.save();
 		
-		res.status(200).send({ message: "OK" });
+		res.status(200).send({
+			_id: order._id,
+			message: "OK"
+		});
 	}
 );
 

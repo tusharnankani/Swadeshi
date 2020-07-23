@@ -2,8 +2,18 @@ async function sendMockApiRequest(url, options){
 	return router.route(url, options);
 }
 
+async function checkMockAuthentication(){
+	let path = await routePath();
+	if(!path)
+		return;
+	path = "/TSECHackathon" + path;
+	if((path + "/") != window.location.pathname && path != window.location.pathname)
+		window.location.pathname = path;
+}
+
 window.addEventListener("load", () => {
 	sendApiRequest = sendMockApiRequest;
+	checkAuthentication = checkMockAuthentication;
 });
 
 //Router
@@ -633,16 +643,20 @@ router.post(
 		}
 		
 		let data = req.body;
-		await new Order({
+		let order = new Order({
 			wholesalerId: data.wholesalerId,
 			farmerId: data.farmerId,
 			product: data.product,
 			date: data.date,
 			isOpen: true,
 			quantity: data.quantity
-		}).save();
+		});
+		await order.save();
 		
-		res.status(200).send({ message: "OK" });
+		res.status(200).send({
+			_id: order._id,
+			message: "OK"
+		});
 	}
 );
 

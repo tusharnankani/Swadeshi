@@ -190,6 +190,7 @@ input{
 }
 input::placeholder{
 	color: transparent;
+	user-select: none;
 }
 input:focus{
 	outline: none;

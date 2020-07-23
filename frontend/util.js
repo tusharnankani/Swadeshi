@@ -1,6 +1,15 @@
 const get = document.querySelector.bind(document);
 
 async function checkAuthentication(){
+	let path = await routePath();
+	if(!path)
+		return;
+	
+	if((path + "/") != window.location.pathname && path != window.location.pathname)
+		window.location.pathname = path;
+}
+
+async function routePath(){
 	let r = await sendApiRequest("/auth/user");
 	let data = await r.json();
 	
@@ -16,8 +25,7 @@ async function checkAuthentication(){
 	else if(r.status == 404)
 		path = "/signup";
 	
-	if(path && (path + "/") != window.location.pathname && path != window.location.pathname)
-		window.location.pathname = path;
+	return path;
 }
 
 async function sendApiRequest(url, options = {}){
