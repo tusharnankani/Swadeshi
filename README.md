@@ -1,6 +1,6 @@
-# *TSEC Codestorm - Hackathon'20*
+# *Swadeshi*
 
-## Problem Statement
+### Problem Statement (*TSEC Codestorm - Hackathon'20*)
 - Implement a Web Based solution through which farmers can participate in a commodity exchange market. The solution should explain the process involved and the benefits of commodity exchange to the user.
 - The purpose of such an exchange is to provide a centralized marketplace where commodity producers can sell their commodities to those who want to use them for manufacturing or consumption.
 - The solution should enable farmers to create independent accounts and interact with dealers to avail the best profits and deals.
@@ -112,7 +112,7 @@
 
 # *Contact Page* - Simple and User-frinedly:
 * **24 X 7 Helpline Service Center**
-* **[Videos](https://github.com/tusharnankani/TSECHackathon/tree/master/frontend/videos) in Hindi explaining working of site to help both, the farmers and the wholesalers.**
+* **[Videos](https://github.com/tusharnankani/Swadeshi/tree/master/frontend/videos) in Hindi explaining working of site to help both, the farmers and the wholesalers.**
 * **Added FAQs, in hindi and english**
 
 ![12](https://user-images.githubusercontent.com/61280281/86548673-e1887600-bf5a-11ea-9fca-7104ec9d52f4.png)
