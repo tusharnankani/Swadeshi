@@ -105,7 +105,7 @@ async function checkMockAuthentication(){
 	let path = await routePath();
 	if(!path)
 		return;
-	path = "/TSECHackathon" + path;
+	path = "/Swadeshi" + path;
 	if((path + "/") != window.location.pathname && path != window.location.pathname)
 		window.location.pathname = path;
 }
