@@ -91,15 +91,19 @@ function fontInc(){
 	var el = document.getElementById('body');
 	var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 	var fontSize = parseFloat(style); 
-	el.style.fontSize = (fontSize + 1) + 'px';
-	// adding smooth transitioning;
-	el.style.transition = 'ease 0.3s';
+	if(fontSize < 25) {
+		el.style.fontSize = (fontSize + 1) + 'px';
+		// adding smooth transitioning;
+		el.style.transition = 'ease 0.3s';
+	}
 }
 
 function fontDec(){
 	var el = document.getElementById('body');
 	var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 	var fontSize = parseFloat(style); 
-	el.style.fontSize = (fontSize - 1) + 'px';
-	el.style.transition = 'ease 0.3s';
+	if(fontSize > 10) {
+		el.style.fontSize = (fontSize - 1) + 'px';
+		el.style.transition = 'ease 0.3s';
+	}
 }
