@@ -1,5 +1,6 @@
 # *Swadeshi*
 
+
 ### Problem Statement (*TSEC Codestorm - Hackathon'20*)
 - Implement a Web Based solution through which farmers can participate in a commodity exchange market. The solution should explain the process involved and the benefits of commodity exchange to the user.
 - The purpose of such an exchange is to provide a centralized marketplace where commodity producers can sell their commodities to those who want to use them for manufacturing or consumption.
@@ -16,7 +17,9 @@
 
 - Database
 	- MongoDB
-
+	
+### For the Live Demo, click [here.](https://tusharnankani.github.io/Swadeshi/)
+* We haven't used any tool for OTP. Since, this is a prototype, the OTP message isn't sent to the number. Instead, a random 4 digit number is generated on the Console (on the website deployed) [`Ctrl + Shift + i`]
 
 
 ## Logo
