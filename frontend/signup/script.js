@@ -56,18 +56,21 @@ function validateInputs(){
 			data.entity = i.dataset.value;
 	if(!data.entity){
 		isValid = false;
+		alert("Please select one entity");
 		console.error("Please select one entity");
 	}
 	
 	data.name = name.value;
 	if(!isInputValid(name)){
 		isValid = false;
+		alert("Please check the name");
 		console.error("Please check the name");
 	}
 	
 	data.aadhaar = aadhaar.value;
 	if(!isInputValid(aadhaar)){
 		isValid = false;
+		alert("Please check the aadhaar card number");
 		console.error("Please check the aadhaar card number");
 	}
 	
