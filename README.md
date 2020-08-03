@@ -9,21 +9,29 @@
 ## Tech Stack
 - Frontend
 	- HTML5
-	- CSS3 
-	- Vanilla JavaScript 
+	- CSS3
+	- Vanilla JavaScript
 
 - Backend
 	- Node.js (Express.js)
 
 - Database
 	- MongoDB
-	
-### For the Live Demo, click [here.](https://tusharnankani.github.io/Swadeshi/)
-* We haven't used any tool for OTP. Since, this is a prototype, the OTP message isn't sent to the number. Instead, a random 4 digit number is generated on the Console (on the website deployed) [`Ctrl + Shift + i`]
 
+### For the Live Demo, click [here](https://tusharnankani.github.io/Swadeshi/).
+
+- The live demo replicates the behavior of the site without the need for a real server. Instead, there is a mock server that is implemented in client side JavaScript, using `localStorage` as the database.
+- Please refer to [`frontend/mock-server.js`](frontend/mock-server.js) if you are curious about how the mock server is implemented.  
+- To get a better understanding of how the site works, please open the developer console (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd>).  
+  The live demo logs a lot of details like network requests, responses and messages to the browser console.
+- The database can be inspected directly from the console by typing `Database.tables`.  
+  When the page is unloaded, the database is saved to `localStorage` with the key `database`. You can access this with `localStorage.database`.
+- Since this is just a prototype, there isn't any real OTP integration.  
+  If you run the server locally, then the OTP will be generated and logged to the server output.  
+  If you view the live demo then the OTP will be displayed as an alert and also logged to the browser console.
 
 ## Logo
-* The *wheat* represents *farmer's pride*, and green around the wheat represents the *indian fields.*
+* The *wheat* represents *farmer's pride*, and green around the wheat represents the *Indian fields.*
 <img src = "frontend/logo.svg" alt = "Logo of a bushel of wheat, in a green circle" width = "128" height = "128" />
 
 ## Landing page flow
@@ -107,16 +115,16 @@
 
 ![10](https://user-images.githubusercontent.com/61280281/86548657-d46b8700-bf5a-11ea-84a3-0fc5b3dfd806.png)
 
-### Simply, pressing the tick icon, if the order is delievered, the wholesaler can update it for himself and the farmers. 
+### Simply, pressing the tick icon, if the order is delivered, the wholesaler can update it for himself and the farmers. 
 
 ![11](https://user-images.githubusercontent.com/61280281/86548665-da616800-bf5a-11ea-9b33-a22c2c2a1ba8.png)
 
-### Both the Farmer's and the Wholesaler's numbers will be provided on the portals and how the transactions will take place can be discussed over call, according to one's convinience.
+### Both the Farmer's and the Wholesaler's numbers will be provided on the portals and how the transactions will take place can be discussed over call, according to one's convenience.
 
-# *Contact Page* - Simple and User-frinedly:
+# *Contact Page* - Simple and User-friendly:
 * **24 X 7 Helpline Service Center**
 * **[Videos](https://github.com/tusharnankani/Swadeshi/tree/master/frontend/videos) in Hindi explaining working of site to help both, the farmers and the wholesalers.**
-* **Added FAQs, in hindi and english**
+* **Added FAQs, in Hindi and English**
 
 ![12](https://user-images.githubusercontent.com/61280281/86548673-e1887600-bf5a-11ea-9fca-7104ec9d52f4.png)
 ![13](https://user-images.githubusercontent.com/61280281/86548675-e3523980-bf5a-11ea-87bf-feaf419a03c7.png)
