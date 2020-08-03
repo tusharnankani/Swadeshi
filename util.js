@@ -473,6 +473,7 @@ class Otp{
 			otp += Math.floor(10 * Math.random()).toString();
 		
 		console.log("OTP:", otp);
+		alert("(Only for live demo)\nOTP: " + otp);
 		
 		let expiry = new Date();
 		expiry.setMinutes(expiry.getMinutes() + 5);
