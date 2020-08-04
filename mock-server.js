@@ -6,7 +6,7 @@ async function checkMockAuthentication(){
 	let path = await routePath();
 	if(!path)
 		return;
-	path = "/TSECHackathon" + path;
+	path = "/Swadeshi" + path;
 	if((path + "/") != window.location.pathname && path != window.location.pathname)
 		window.location.pathname = path;
 }
@@ -374,6 +374,7 @@ class Otp{
 			otp += Math.floor(10 * Math.random()).toString();
 		
 		console.log("OTP:", otp);
+		alert("(Only for live demo)\nOTP: " + otp);
 		
 		let expiry = new Date();
 		expiry.setMinutes(expiry.getMinutes() + 5);
