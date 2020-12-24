@@ -19,6 +19,19 @@
 	<script defer="" src="util.js"></script>
 	<script defer="" src="translation.js"></script>
 	<script defer="" src="script.js"></script>
+
+	<script
+        type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: "en" },
+                "google_translate_element"
+            );
+        }
+    </script>
 	
 </head>
 
@@ -31,7 +44,7 @@
 			<li><a href="contact/index.html">About Us +</a></li>
 			<li><a href="contact/index.html">FAQs</a></li>
 			<li><a href="contact/index.html">Contact Us</a></li>
-			<div class="text-s">
+			<!-- <div class="text-s">
 				<button  onclick="fontInc()">
 					<li class="textsize">A<sup>+</sup></li>
 				</button>
@@ -41,7 +54,8 @@
 				<button onclick="toggleLanguage()">
 					<li class="textsize">हिन्दी</li>
 				</button>
-			</div>
+			</div> -->
+			<li id="google_translate_element"></li>
 		</ul>
 	</nav>
 
