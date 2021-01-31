@@ -48,7 +48,37 @@
 		- Else user does not exist, goto signup.
 - Inform user that OTP is wrong, goto (*)
 
-## Api Documentation
+## Project Structure
+
+```
+frontend
+ ┣ contact
+ ┃ ┣ index.html
+ ┃ ┗ translation.js
+ ┣ farmer
+ ┃ ┣ index.html
+ ┃ ┣ script.js
+ ┃ ┗ style.css
+ ┣ signup
+ ┃ ┣ index.html
+ ┃ ┣ script.js
+ ┃ ┗ style.css
+ ┣ videos
+ ┃ ┣ farmer.mp4
+ ┃ ┗ wholesaler.mp4
+ ┣ wholesaler
+ ┃ ┣ index.html
+ ┃ ┣ script.js
+ ┃ ┗ style.css
+ ┣ background.svg
+ ┣ index.html
+ ┣ logo.svg
+ ┣ mock-server.js
+ ┣ script.js
+ ┣ style.css
+ ┣ translation.js
+ ┗ util.js
+```
 
 
 ## Local Setup
