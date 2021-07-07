@@ -49,13 +49,14 @@ nav {
 
 nav ul {
 	/* margin: 150px auto 0;  */
-	padding: 0; 
-	display: table;
+	padding: 25px; 
+	display: flex;
+	align-items: center;
+	align-content: space-around;
 	text-align: center;
-	display: table;
 	list-style: none;
 	width: 100%;
-	justify-content: center;
+	justify-content: space-evenly;
 }
 
 nav ul li {
@@ -63,7 +64,6 @@ nav ul li {
 	padding: 15px 20px;
 	display: table-cell; 
 	position: relative; 
-  /* padding: 15px 0; */
 }
 
 nav ul li a {
@@ -97,6 +97,20 @@ nav .logo {
 	max-height: 100%;
 	padding: 0.3rem;
 	box-sizing: border-box;
+}
+
+/* Multiple languages using translate */
+#google_translate_element img, .goog-te-banner {
+    display: none;
+}
+
+select.goog-te-combo {
+    height: 25px;
+    border-radius: 30px;
+}
+
+.goog-logo-link {
+	height: 1px;
 }
 
 /* Font icon + - */
